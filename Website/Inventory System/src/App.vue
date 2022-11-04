@@ -15,13 +15,21 @@ import TheWelcome from './components/TheWelcome.vue'
   </header>
 
   <main>
+    
     <!-- <TheWelcome /> -->
     <h3>Items</h3>
-    Name:
-    <input>
-    <button>previous item</button>
-    <button>next item</button>
+    Item Name
+    Item #:
+    <div>
+    <button>
+      Previous Item</button>
+    <button @click='log'>Next Item</button>
+    </div>
   </main>
+  <div>
+  <button>Add Item</button>
+  <button>Delete Item</button>
+  </div>
 </template>
 
 <style scoped>
@@ -51,6 +59,11 @@ h1{
     display: flex;
     place-items: flex-start;
     flex-wrap: wrap;
+  }
+
+  main {
+    margin : 0 auto;
+    text-align: center;
   }
 }
 </style>

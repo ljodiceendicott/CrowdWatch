@@ -1,0 +1,88 @@
+<html>
+  <header>
+    <script type="text/javascript" src="data.json"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/main.css">
+    <h1>Inventory System</h1>
+  </header>
+  <body>
+    <main>
+      <script>
+        let i = 0;
+
+        var d = "";
+        fetch("data.json")
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            var objList = [];
+            for (var i = 0; i < data.length; i++) {
+              var objname = data[i].name;
+              // console.log(name);
+              var objnumber = data[i].amount;
+              // console.log(number)
+              const obj = { name: objname, number: objnumber };
+              objList.push(obj);
+            }
+            window.value = objList;
+            document.getElementById("n").innerHTML = window.value[3].name;
+            document.getElementById("num").innerHTML = window.value[3].number;
+          });
+
+        function nextitem() {
+          i = i + 1;
+          if (i >= window.value.length) {
+            i = 0;
+          }
+          console.log(window.value[i]);
+          document.getElementById("n").innerHTML = window.value[i].name;
+          document.getElementById("num").innerHTML = window.value[i].number;
+        }
+        function previtem() {
+          i = i - 1;
+          if(i == 0){
+            i = window.value.length;
+            console.log("I was zero now its ->"+i)
+          }
+          console.log(window.value[i]);
+          document.getElementById("n").innerHTML = window.value[i].name;
+          document.getElementById("num").innerHTML = window.value[i].number;
+        }
+        function addone() {
+          var num = window.value[i].number;
+          num = num + 1;
+          window.value[i].number = num;
+          document.getElementById("num").innerHTML = num;
+        }
+        function subone() {
+          var num = window.value[i].number;
+          if (num > 0) {
+            num = num - 1;
+          }
+          window.value[i].number = num;
+          document.getElementById("num").innerHTML = num;
+        }
+        
+      </script>
+      <!-- <TheWelcome /> -->
+      <div id="itemname">
+      <h3>Item:</h3>
+      <h4 id="n"></h4>
+      </div>
+      <h4>Item #:</h4>
+      <h4 id="num"></h4>
+      <div id="cycle">
+        <button onClick="previtem()">Previous Item</button>
+        <button onClick="nextitem()">Next Item</button>
+      </div>
+      <input>
+
+      <div id="update">
+        <button onclick="addone()">+1 Item</button>
+        <button>Update Manually</button>
+        <button onclick="subone()">-1 Item</button>
+      </div>
+      <button onclick="console.log()" id="additem"> Add Item to System</button>
+    </main>
+  </body>
+</html>

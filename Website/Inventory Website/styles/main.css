@@ -1,0 +1,29 @@
+*{
+    margin: auto;
+    background-color:blue;
+}
+
+header {
+  line-height: 1.5;
+  padding-bottom: 15px;
+}
+
+body{
+  text-align: center;
+}
+button{
+  margin-top:10px;
+}
+
+#cycle{
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+#update{
+  
+}
+
+h1{
+  text-align: center;
+}

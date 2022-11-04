@@ -2,12 +2,8 @@ import serial
 import json
 import time
 
-with open('data.json', 'r') as openfile:
-    json_object = json.load(openfile)
+with open()
 
-# print(json_object)
-number = json_object[3]
-# print(number['amount'])
 #connecting the arduino to the python
 arduino = serial.Serial(port='COM7', baudrate=9600, timeout=.1)
 
@@ -35,8 +31,4 @@ while True:
         if data == "h":
             number = number + 1
             print(number)
-            json_object[3]["amount"] = number
-            print("will be transfered to the json file")
-            with open("data.json", "w") as outfile:
-                json.dump(json_object, outfile)
     time.sleep(0.05)
