@@ -8,14 +8,13 @@
   <body>
     <main>
       <script>
-        let i = 0;
-
+        let i = 3;
+        let objList = [];
         var d = "";
         fetch("data.json")
           .then((response) => response.json())
           .then((data) => {
             console.log(data);
-            var objList = [];
             for (var i = 0; i < data.length; i++) {
               var objname = data[i].name;
               // console.log(name);
@@ -40,13 +39,22 @@
         }
         function previtem() {
           i = i - 1;
-          if(i == 0){
-            i = window.value.length;
-            console.log("I was zero now its ->"+i)
-          }
+          if (i >= 0) {
+          var obj = window.value[i];  
           console.log(window.value[i]);
           document.getElementById("n").innerHTML = window.value[i].name;
           document.getElementById("num").innerHTML = window.value[i].number;
+          }
+          else{
+            var size = window.value;
+            console.log(size.length)
+           
+          i = size.length - 1;  
+          document.getElementById("n").innerHTML = window.value[i].name;
+          document.getElementById("num").innerHTML = window.value[i].number;
+
+          }
+         
         }
         function addone() {
           var num = window.value[i].number;
@@ -65,6 +73,7 @@
         
       </script>
       <!-- <TheWelcome /> -->
+      <div id="content">
       <div id="itemname">
       <h3>Item:</h3>
       <h4 id="n"></h4>
@@ -83,6 +92,7 @@
         <button onclick="subone()">-1 Item</button>
       </div>
       <button onclick="console.log()" id="additem"> Add Item to System</button>
+      </div>
     </main>
   </body>
 </html>

@@ -1,6 +1,6 @@
 *{
     margin: auto;
-    background-color:blue;
+  
 }
 
 header {
@@ -14,14 +14,13 @@ body{
 button{
   margin-top:10px;
 }
-
 #cycle{
   margin-top: 5px;
   margin-bottom: 10px;
 }
 
-#update{
-  
+#content{
+  background-color: gainsboro;
 }
 
 h1{
