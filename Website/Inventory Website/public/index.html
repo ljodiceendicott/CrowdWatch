@@ -1,6 +1,6 @@
 <html>
   <header>
-    <script type="text/javascript" src="data.json"></script>
+    <script type="text/javascript" src="data/data.json"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/main.css">
     <h1>Inventory System</h1>
@@ -11,7 +11,7 @@
         let i = 3;
         let objList = [];
         var d = "";
-        fetch("data.json")
+        fetch("data/data.json")
           .then((response) => response.json())
           .then((data) => {
             console.log(data);
@@ -70,6 +70,19 @@
           window.value[i].number = num;
           document.getElementById("num").innerHTML = num;
         }
+        function post(){
+          data = {
+            name : "mike"
+          }
+          const options = {
+            method:'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body :JSON.stringify(data) 
+          }
+          fetch('/endpoint', options)
+        }
         
       </script>
       <!-- <TheWelcome /> -->
@@ -90,8 +103,10 @@
         <button onclick="addone()">+1 Item</button>
         <button>Update Manually</button>
         <button onclick="subone()">-1 Item</button>
+
+        <button onclick="post()">post</button>
       </div>
-      <button onclick="console.log()" id="additem"> Add Item to System</button>
+      <button><a href="pages/addtoSystem.html">Add New Item</a></button>
       </div>
     </main>
   </body>
