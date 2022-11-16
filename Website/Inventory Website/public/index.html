@@ -71,8 +71,10 @@
           document.getElementById("num").innerHTML = num;
         }
         function post(){
+          var time = Date.now();
           data = {
-            name : "mike"
+            name : 'mike',
+            timestamp : time,
           }
           const options = {
             method:'POST',

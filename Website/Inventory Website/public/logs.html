@@ -1,0 +1,19 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>
+            Application Data
+        </h1>
+        <script>
+            getData();
+
+            async function getData() {
+            const response = await fetch('/logs');
+            const data = await response.json();
+            console.log(data);
+        }
+        </script>
+    </body>
+</html>
