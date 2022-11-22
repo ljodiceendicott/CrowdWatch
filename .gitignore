@@ -5,6 +5,10 @@
 /tmp
 /out-tsc
 
+#Self-made Files
+*.db
+*.xslx
+
 # Runtime data
 pids
 *.pid
