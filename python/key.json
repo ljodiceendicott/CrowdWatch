@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "thesis-364514",
+  "private_key_id": "b53318f019a2e4a19b9f9668464de093486e2c7b",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDBhitmUFaqVTur\noOKyhT5JDnyd/EX0yf2MppgwOMheCUo/BQEYecobSE+D1sY7XH4zb7YksZmt3IJ/\nkK+lCVa4wZpROfExZWWjiq3XiCbePNSBOZvxmRX2LvoU5aeYdSBWSTuIT3FmAXRA\n0XrIqFxaFas1W5YOhPS73xuFGUbwpDSYIrQfiY9huQjUbgZES3Yzzn1alNdnTUzu\noMaQDHoWiT4KimCz1Y0j4kjFBysXRoFQTDLwFyZv8VEA/kKmBVifaCfSAk0Iiw9b\nr2MNGPEuT49ihU8tbATNyogAzwB1tsIDr7UToIPvyTPcP6YsnXjOSZSoikNNIbJq\nx/yHmmDpAgMBAAECggEAARjVGyXeb+W+yljFoDRwJ3LdEvownVQdy1PQbgmMXTgZ\nQyUwneZm1mPBC6LGieSa1IjQFAIruFgVJ0r3K+zTIIX8bXRyIRENk/E/zgZ4De9z\nVu4wK5zuCnC2uzKYEh2r2sFchIfKwUTF1244j3Wg3GPeDhXgUmG/j2cS3VzI0ali\nGmSnBoqorAAgvH3Tfpe4yC8Z9pT9608zVHVX+olbhRIx/fR2PFbs4EUhw6G6wvS6\nE8AAFCMyRYpBgqKNPzBOJOv3PEwrVhQYio5nNFVYXexClhwpkG/1jay6kbytjRlT\ny6oILlvmq23m5ON7bxJxGeyMMD1RmIzm2YnL817JQQKBgQDn4V5kbVxHXMRCMHNU\naXdx63UPlxwrwmjlXpTNLzmvhoO/0pYImBLB0hQ7eDpDM8MLofktT21DNksCYcJg\n9/AKyyoNSkev/0uGgD946tO57IDwFGtedVSmGwp3og3Xxe5jcZK6JAEH0c3Ul+NR\ncgAUMqD2e3h4FToBR5LHjc+2kQKBgQDVp24646o0nWKGIKm8P0mYKLst5USki6hb\nZNvH2H6utA0HlxTx6gjvBJ7TO+v9H3kZs8ihnQdSsjkM42lxiS46CInLyqMXhl3F\nvM+FBJre3iUZBTrln/Tr3wCryQzC2pcr7YmerAjlqoI2aPfYTzN/OxUSx8RiOJiD\nssiufI6g2QKBgBWJaiH7wlFifVwEcgHKFez/yIydJWGvGd0L7tgr5bi2zq/XWFYO\nAdf8siJf5VFuklQXRDSAJw7SER90gwBMpv/ppMs9NfFTzej9KmgJr4aaP9OMofhQ\n/366DjvUUmLTIHQeDVm6lFnsk6iGPvfGldlKZobeKu9EUXHi+vAL7NnxAoGBAMXF\nY7MddTuZCE9yQsxfpQc1hPbaCG1sXZ6kQRG/5JxhTMJe5uN8KWLfWwnbqPo5PQc+\ntZRsYA/7q/WzOLMBMgpERxGe9NNc7MaSnWHbPmTZK2v6vGc8ZyJD3kImLCre3xqp\nmj+HrgCykjA9gFb6EYhPr5Uf2Di3fO5D+6IQ6JIZAoGAdw2E3WxAOw6vk3hGpBYx\nzOkxYPF+Mg3CSIVBxewhqA+5G2KP3XoORPGtJ0kw/BJs2h0MG6D2XAbQclYPyJYe\nmNck9WRLquTs7iiZQ+jIkF3wciEJOQgQCV1bxSzM/nlndJFTJmrNIghGCj6x13Ay\nkraffVol+wEmRPNPQKaWYO0=\n-----END PRIVATE KEY-----\n",
+  "client_email": "inventorysystem@thesis-364514.iam.gserviceaccount.com",
+  "client_id": "103209834820871647229",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/inventorysystem%40thesis-364514.iam.gserviceaccount.com"
+}

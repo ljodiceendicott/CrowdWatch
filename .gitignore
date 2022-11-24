@@ -9,6 +9,11 @@
 *.db
 *.xslx
 
+#datafiles not want to be tracked
+python/client_secrets.json
+python/googledrivefileresponse.json
+
+
 # Runtime data
 pids
 *.pid
