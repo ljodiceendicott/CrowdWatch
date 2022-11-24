@@ -14,6 +14,7 @@ python/client_secrets.json
 python/googledrivefileresponse.json
 python/key.json
 python/token.json
+python/credentials.json
 python/*.json
 
 # Runtime data
