@@ -12,7 +12,7 @@
 #datafiles not want to be tracked
 python/client_secrets.json
 python/googledrivefileresponse.json
-
+python/key.json
 
 # Runtime data
 pids
