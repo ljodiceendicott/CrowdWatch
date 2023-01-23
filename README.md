@@ -10,12 +10,12 @@ This Project fulfills my Senior thesis for Endicott College.
   - Spreadsheet Files
   
 To Run this project (Website) use the command:
-Command has to be ran from 'Senior Thesis\Website\PeopleWatchSite'
+Command has to be ran from *Senior Thesis\Website\PeopleWatchSite*
 
-'node index.js'
+*node index.js*
 
 Before running the project for non-testing usage you will have to run the python command:
-'python getStarted.py'
+*python getStarted.py*
 	This command will be used to create the data storage for the project. this includes:
 	- SQL Database file -- all information that is collected by the system is found in this file
 	- MongoDB Database file -- log of the actions from the website 
