@@ -2,7 +2,7 @@ import serial
 import json
 import time
 
-with open('data.json', 'r') as openfile:
+with open('C:\\Users\\jodic\\Desktop\\Senior Thesis\\Website\\Inventory Website\\public\\data\\data.json', 'r') as openfile:
     json_object = json.load(openfile)
 
 # print(json_object)

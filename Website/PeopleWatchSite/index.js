@@ -13,16 +13,16 @@ database.loadDatabase();
 
 database.insert({action: 'Login', date : Date.now()})
 
-var con = mysql.createConnection({
-    host:"localhost",
-    user:"ljodice",
-    password: ""
-});
+// var con = mysql.createConnection({
+//     host:"localhost",
+//     user:"ljodice",
+//     password: ""
+// });
 
-con.connect(function(er){
-    if(err) throw err;
-    console.log("Connected!");
-})
+// con.connect(function(err){
+//     if(err) throw err;
+//     console.log("Connected!");
+// })
 
 app.post('/endpoint', (request, response) => {
     const data = request.body;
@@ -45,6 +45,6 @@ app.get('/logs', (request,response) => {
     });
 });
 
-router.get('/', function(req, res, next) {
-    res.send('respond with a resource')
-});
+// router.get('/', function(req, res, next) {
+//     res.send('respond with a resource')
+// });

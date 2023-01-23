@@ -1,0 +1,3 @@
+to run the project locally use this location + command
+
+Senior Thesis\Website\Inventory Website> node index.js

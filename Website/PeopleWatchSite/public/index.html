@@ -1,14 +1,14 @@
 <html>
   <header>
-    <script type="text/javascript" src="data/data.json"></script>
+    <script type="text/javascript" src="../data.json"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/main.css">
-    <h1>Inventory System</h1>
+    <h1>CrowdWatch</h1>
   </header>
   <body>
     <main>
       <script>
-        let i = 3;
+        let i = 1;
         let objList = [];
         var d = "";
         fetch("data/data.json")
@@ -90,10 +90,11 @@
       <!-- <TheWelcome /> -->
       <div id="content">
       <div id="itemname">
-      <h3>Item:</h3>
+      <h3>Section:</h3>
       <h4 id="n"></h4>
       </div>
-      <h4>Item #:</h4>
+      <h4 style="color:red">Maximum Amount: </h4>
+      <h4>Section Count:</h4>
       <h4 id="num"></h4>
       <div id="cycle">
         <button onClick="previtem()">Previous Item</button>
@@ -102,13 +103,13 @@
       <input>
 
       <div id="update">
-        <button onclick="addone()">+1 Item</button>
+        <button onclick="addone()">+1 Person</button>
         <button>Update Manually</button>
-        <button onclick="subone()">-1 Item</button>
+        <button onclick="subone()">-1 Person</button>
 
         <button onclick="post()">post</button>
       </div>
-      <button><a href="pages/addtoSystem.html">Add New Item</a></button>
+      <button><a href="pages/addtoSystem.html">Add New Section</a></button>
       </div>
     </main>
   </body>
