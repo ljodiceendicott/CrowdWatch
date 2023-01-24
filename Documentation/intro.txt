@@ -1,0 +1,57 @@
+Hello, Welcome to CrowdWatch. 
+The Solution for your business' counting of customer needs
+
+As a Buisness,
+You are able to take full advantage of the data analytics.
+The data will be formatted into a spreadsheet format that can be 
+easily read by a person as well as incorporating graphics.
+It is something that only the business itself will be able to see 
+and use as a tool to understand the times and locations for the business
+as well as making sure that there is proper staffing to help midigate the 
+problem when there is either too much or not enough staff for particular times
+This portion of analytics will look at the historical data for the amount of 
+clients that there are in each of the areas
+
+As a customer,
+There is a web-interface that is usable to help them understand
+the current count of people found in the locations of the business
+and help the customer be informed of the amount of people in the locations
+potenially effecting the time at which they will arrive allowing the companys 
+to not have a huge rush of people come in all at once.
+
+This inializing step is used by the business to help cover the different sections
+that they would like to keep track of.
+
+
+USAGE #1
+Running with prepopulated file:
+
+initialize.py *Path to file*
+
+Ex): initialize.py -f ../Desktop/BusinessInfo.txt
+
+File will have the formatting of the following:
+
+Business name
+Days of operation(MTWRFSU)--if any of the days are not counted insert -
+# of locations
+Nickname of location
+Maximum capacity
+...
+(last nickname of location)
+(last maximum capacity)
+
+Ex.)
+TAVERN DINER
+MTWTF--
+2
+Bar
+50
+TAVERN
+25
+
+USAGE #2
+Running with intent to manually insert the data:
+
+initialize.py -m
+-This will be 
