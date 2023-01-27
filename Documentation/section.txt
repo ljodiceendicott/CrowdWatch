@@ -1,0 +1,11 @@
+paddy
+4
+bar
+50
+tavern
+40
+kitchen
+5
+patio
+25
+x
