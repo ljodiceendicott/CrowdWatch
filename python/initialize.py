@@ -89,11 +89,23 @@ def databaseSetup(account):
 
     sql_command = """
     CREATE TABLE TEST(
-        locID VARCHAR(8),
-        name VARCHAR(20),
-        location VARCHAR(30),
+        locID,
+        name,
+        location,
     );
     """
+    # cursor.execute(sql_command)
+    # cursor.execute("CREATE TABLE TEST(locID,name,location);")
+
+    # cursor.commit()
+    # sqliteConnection.close()
+    sql_command = """
+        CREATE TABLE TEST(
+            LocationName VARCHAR(20) PRIMARY KEY,
+            MaxCapacity INTEGER
+        );
+        """
+
     cursor.execute(sql_command)
     print("SQL command executed")
 
@@ -112,6 +124,6 @@ elif len((sys.argv)) > 1: #This means that the user has a file that they would l
     
         # spreadsheetSetup(new_User_Account) //This is what is used to add it to the spreadsheet)
 exp_Json = expJson(account)
-print(serialize(exp_Json)) #prints out Json --->>>should be exported into a file
-
-# databaseSetup(account)
+# print(serialize(exp_Json)) #prints out Json --->>>should be exported into a file
+json_to_be_exported = serialize(exp_Json)
+# databaseSetup(account) #This writes up the inital SQL file 
