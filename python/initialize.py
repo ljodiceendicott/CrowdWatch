@@ -39,7 +39,7 @@ def serialize(object):
     data = json.dumps(object, default=lambda o: o.__dict__)
     return data
 
-print(sys.argv)
+
 def accountManualInput():
     #Make user
     businessname =input('What is the name of the business?')
@@ -88,25 +88,45 @@ def databaseSetup(account):
     cursor = sqliteConnection.cursor()
 
     sql_command = """
-    CREATE TABLE TEST(
-        locID,
-        name,
-        location,
-    );
-    """
+        CREATE TABLE TEST(
+            locID,
+            name,
+            location,
+        );
+        """
     # cursor.execute(sql_command)
     # cursor.execute("CREATE TABLE TEST(locID,name,location);")
 
     # cursor.commit()
     # sqliteConnection.close()
-    sql_command = """
-        CREATE TABLE TEST(
+    location = """
+        CREATE TABLE Location(
             LocationName VARCHAR(20) PRIMARY KEY,
-            MaxCapacity INTEGER
+            MaxCapacity INTEGER,
+            AverageCapacity INTEGER
         );
         """
+    locationSum = """
+        CREATE TABLE LocSummary(
+            LocationTimeStamp VARCHAR(32) PRIMARY KEY,
+            LocationName VARCHAR(20) FORIEGN KEY,
+            TimeStamp VARCHAR(12)
+        );
+        """
+    business = """
+        CREATE TABLE Business(
+             BusinessName VARCHAR(20) PRIMARY KEY
+         );
+        """
+    business_insert = """
+        INSERT INTO Business VALUES ("name")  
+         """
+    # cursor.execute(location)
+    # cursor.execute(locationSum)
+    # cursor.execute(business)
+    cursor.execute(business_insert)
+    sqliteConnection.commit()
 
-    cursor.execute(sql_command)
     print("SQL command executed")
 
 
@@ -124,6 +144,6 @@ elif len((sys.argv)) > 1: #This means that the user has a file that they would l
     
         # spreadsheetSetup(new_User_Account) //This is what is used to add it to the spreadsheet)
 exp_Json = expJson(account)
-# print(serialize(exp_Json)) #prints out Json --->>>should be exported into a file
+print(serialize(exp_Json)) #prints out Json --->>>should be exported into a file
 json_to_be_exported = serialize(exp_Json)
 # databaseSetup(account) #This writes up the inital SQL file 
