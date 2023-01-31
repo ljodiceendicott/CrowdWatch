@@ -8,35 +8,84 @@ from datetime import date, datetime, timedelta
 from timeloop import Timeloop
 from openpyxl import Workbook, load_workbook
 
-def get_Date():
-    now = datetime.now()
-    dt_string= now.strftime("%y%m%d%H%M")
-    return dt_string
+
+#class needed for object to json transfer
 class expJson(object):
     def __init__(self, object):
         self.account = object
-
+        
+        
+#returns data in form of json for a complex object
 def serialize(object):
     data = json.dumps(object, default=lambda o: o.__dict__)
     return data
 
-def read_from_Json(business_name):
-    file = open('../UserFiles/'+business_name+'.json')
+#Returns the data that is found in Json File that is for the specific business returning the business OBJ
+# @param - name - Name the json file that is being looked for in user files 
+def read_from_Json(name):
+    file = open('../UserFiles/'+name+'.json')
     data = json.load(file)
     file.close()
     return data
+#This is a Use case from reading in from json
+#------how to access the location name and adding the count member and making it zero------
+# data = read_from_Json("Test")
+# for i in data['account']['locations']:
+#     name = i['name']
+#     i['count'] = 0
 
-def write_to_Json(data):
-    with open("../UserFiles/paddy.json", 'w') as outfile:
+def write_to_Json(data, name):
+    with open("../UserFiles/"+name+".json", 'w') as outfile:
         outfile.write(data)
     
-data = read_from_Json("Test")
-for i in data['account']['locations']:
-    name = i['name']
-    i['count'] = 0
 
-def newRow():
-    
-    print()
 
-print(serialize(data))
+#Returns the Date as a string of numbers 
+# EX.) 2301311802
+#order of num => Year-Month-Day-Hour-Minute
+def get_Date():
+    now = datetime.now()
+    dt_string= now.strftime("%y%m%d%H%M")
+    return dt_string
+
+
+#Returns instance of Workbook
+#@param name - Name of the business that you are tryin to get access to their spreadsheet
+def workbook_Instance(name):
+    workbook = load_workbook('../UserFiles/'+name+'businessAnalysis.xlsx')
+    print('instance made')
+    return workbook
+
+#adds data to spreadsheet
+#@param fn - File name that will be written to
+#@param data- data to be added. How it should be formatted: [get_Date(),count1,count2,count3, ...., countn]
+def spreadsheet_Data_Add(fn, data):
+    workbook = workbook_Instance(fn)
+    sheet = workbook.active 
+    column = nextColumn(fn, workbook)
+    print(column)
+    for i in range(0,len(data)): #Loops through all of the data that is given from update
+        print(data[i])
+        cell = sheet.cell(row = i+1, column = column)
+        print(cell.value)
+        cell.value = data[i]
+    workbook.save('../UserFiles/'+fn+'businessAnalysis.xlsx')
+
+#Returns the index of the next avaliable column to be written to
+#@param fn - File name that will be written to
+#@param wb - Instance of the Workbook
+def nextColumn(fn, wb):
+    workbook = wb
+    sheet = workbook.active
+    #loops through all of the columns known
+    for col in range(1, sheet.max_column+2):
+        #if the header is not there then the column can be written to
+        if sheet.cell(row = 1, column = col).value == None or sheet.cell(row=1, column = col).value == "": 
+            print("found empty spot @", col)
+            return col
+
+# nextColumn('paddy')
+# Sample spreadsheet_Data_Add(NAME_OF_BUS, DATA_FROM_BUS)
+#Sample call: spreadsheet_Data_Add(account.name, account.data)
+# spreadsheet_Data_Add('paddy',[get_Date(),1,2,3]) 
+# print(serialize(data))

@@ -80,7 +80,7 @@ def spreadsheetSetup(account):
         else:
             sheet.cell(row=i+1, column=1).value = account.locations[i].name
             sheet.cell(row=i+1, column=2).value = account.locations[i].maxCap
-    workbook = workbook.save("../UserFiles/"+account.name+"buisnessAnalysis.xlsx")
+    workbook = workbook.save("../UserFiles/"+account.name+"businessAnalysis.xlsx")
     print('Workbook created for '+ account.name)
 
 def databaseSetup(account):
@@ -142,7 +142,7 @@ elif len((sys.argv)) > 1: #This means that the user has a file that they would l
     account = accountInputData(path)
     print(account)
     
-        # spreadsheetSetup(new_User_Account) //This is what is used to add it to the spreadsheet)
+spreadsheetSetup(account) #This is what is used to add it to the spreadsheet)
 exp_Json = expJson(account)
 print(serialize(exp_Json)) #prints out Json --->>>should be exported into a file
 json_to_be_exported = serialize(exp_Json)
