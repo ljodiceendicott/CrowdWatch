@@ -1,0 +1,27 @@
+{
+    "account": {
+        "name": "paddy",
+        "locations": [
+            {
+                "name": "bar",
+                "maxCap": 50,
+                "count": 0
+            },
+            {
+                "name": "tavern",
+                "maxCap": 40,
+                "count": 0
+            },
+            {
+                "name": "kitchen",
+                "maxCap": 5,
+                "count": 0
+            },
+            {
+                "name": "patio",
+                "maxCap": 25,
+                "count": 0
+            }
+        ]
+    }
+}
