@@ -40,10 +40,21 @@ def read_from_Json(name):
 #     name = i['name']
 #     i['count'] = 0
 
+
+#Writes the current Data to the json file. that will be updated
+# @param data - data to be written to the file -Type(Json Object)
+# @param name - name of the file to be written -Type(String)  
 def write_to_Json(data, name):
     with open("../UserFiles/"+name+".json", 'w') as outfile:
         outfile.write(data)
-    
+#Use Case
+# adjusting the count of a location then writing to a file
+    # data = read_from_Json('paddy')
+    # locations = data['account']['locations']
+    # loc1= locations[0]
+    # loc1count = locations[0]['count']+1
+    # loc1.update({"count": loc1count})
+    # write_to_Json(serialize(data),'paddy')
 
 
 #Returns the Date as a string of numbers 
@@ -106,8 +117,21 @@ def EnterDatabase(obj, data, table):
         print()  
 
 
-
+##~~~Testing Area~~~~##
 # print(read_from_Json('paddy'))
+data = read_from_Json('paddy')
+locations = data['account']['locations']
+# locations[0]["count"] = locations[0]["count"] + 1
+# print(locations[0])
+# print(locations)
+# print('reading from file:\n\n\n')
+loc1= locations[0]
+loc1count = locations[0]['count']+1
+loc1.update({"count": loc1count})
+write_to_Json(serialize(data),'paddy')
+
+
+##~~Testing Area End ~~~~~##
 # nextColumn('paddy')
 # Sample spreadsheet_Data_Add(NAME_OF_BUS, DATA_FROM_BUS)
 #Sample call: spreadsheet_Data_Add(account.name, account.data)
