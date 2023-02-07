@@ -3,11 +3,17 @@
 #This file is where common functions are located. These actions are used throughout the other files 
 #they are in one location as there are different uses for them and they are very generic allowing for 
 #them to be used for different pourposes 
+
+#checklist
+# [X] spreadsheet
+# [X] set to json
+# [ ] SQL
+# [X] Read from Arduino
+
 import json, sqlite3, time
 from datetime import date, datetime, timedelta
 from timeloop import Timeloop
 from openpyxl import Workbook, load_workbook
-
 
 #class needed for object to json transfer
 class expJson(object):
@@ -43,7 +49,7 @@ def write_to_Json(data, name):
 #Returns the Date as a string of numbers 
 # EX.) 2301311802
 #order of num => Year-Month-Day-Hour-Minute
-def get_Date():
+def getDate():
     now = datetime.now()
     dt_string= now.strftime("%y%m%d%H%M")
     return dt_string
@@ -51,7 +57,7 @@ def get_Date():
 
 #Returns instance of Workbook
 #@param name - Name of the business that you are tryin to get access to their spreadsheet
-def workbook_Instance(name):
+def workbookInstance(name):
     workbook = load_workbook('../UserFiles/'+name+'businessAnalysis.xlsx')
     print('instance made')
     return workbook
@@ -60,7 +66,7 @@ def workbook_Instance(name):
 #@param fn - File name that will be written to
 #@param data- data to be added. How it should be formatted: [get_Date(),count1,count2,count3, ...., countn]
 def spreadsheet_Data_Add(fn, data):
-    workbook = workbook_Instance(fn)
+    workbook = workbookInstance(fn)
     sheet = workbook.active 
     column = nextColumn(fn, workbook)
     print(column)
@@ -84,6 +90,24 @@ def nextColumn(fn, wb):
             print("found empty spot @", col)
             return col
 
+#Returns SQL DB object as a Tuple
+#Tuple[0] - sqliteConnection
+#Tuple[1] - Cursor obj
+#@param name - name of the sql db
+def databaseConnect(name):
+    sqliteConnection = sqlite3.connect("../UserFiles/"+name +'SQL.db')
+    cursor = sqliteConnection.cursor()
+    return sqliteConnection,cursor
+
+def EnterDatabase(obj, data, table):
+    db = databaseConnect(table)
+    for i in range(len(data-2)):
+        idx = i + 2
+        print()  
+
+
+
+# print(read_from_Json('paddy'))
 # nextColumn('paddy')
 # Sample spreadsheet_Data_Add(NAME_OF_BUS, DATA_FROM_BUS)
 #Sample call: spreadsheet_Data_Add(account.name, account.data)

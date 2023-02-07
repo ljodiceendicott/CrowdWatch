@@ -28,17 +28,47 @@
 //
 ////  delay(2000);
 //}
+const int buttonCycleLeftPin = 3;
+const int buttonCycleRightPin = 2;
+const int buttonincrease = 4;
+const int buttondecrease = 5;
 
-const int buttonPin = 2; 
-int buttonState = 0;
+int locnum = 0;
+String phrase;  
 
 void setup(){
-   Serial.begin(9600);
-   Serial.setTimeout(1);
-  pinMode(buttonPin,INPUT);
+  Serial.begin(9600);
+  Serial.setTimeout(1);
+  pinMode(buttonCycleLeftPin, INPUT);
+  pinMode(buttonCycleRightPin, INPUT);
+  pinMode(buttonincrease, INPUT);
+  pinMode(buttondecrease, INPUT);
 
 }
 void loop(){
+  if(Serial.avaliable()){
+    phrase = Serial.readStringUntil('\n')
+    if(phrase.equals("start")){
+      // read in first location, name followed by count
+      // firstContact();
+    }
+    else{
+      // read for change
+      if(digitalRead(buttonCycleLeftPin)== HIGH){
+        // shift current location being tracked by -1
+      }
+      else if(digitalRead(buttonCycleRightPin)== HIGH){
+        // shift current location being tracked by +1
+      }
+      if(digitalRead(buttonIncrease)== HIGH){
+        // increase current count by one
+      }
+      else if(digitalRead(buttonDecrease)==HIGH){
+        // decrease current count by one
+      }
+    }
+  }
+
   buttonState = digitalRead(buttonPin);
   if (buttonState == HIGH) {
     Serial.write('h');
