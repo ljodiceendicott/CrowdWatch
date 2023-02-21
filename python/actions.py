@@ -119,16 +119,14 @@ def EnterDatabase(obj, data, table):
 
 ##~~~Testing Area~~~~##
 # print(read_from_Json('paddy'))
-data = read_from_Json('paddy')
-locations = data['account']['locations']
-# locations[0]["count"] = locations[0]["count"] + 1
-# print(locations[0])
+# data = read_from_Json('paddy')
+# locations = data['account']['locations']
+# # locations[0]["count"] = locations[0]["count"] + 1
+# # print(locations[0])
 # print(locations)
+# for location in locations:
+#     print(location['name'])
 # print('reading from file:\n\n\n')
-loc1= locations[0]
-loc1count = locations[0]['count']+1
-loc1.update({"count": loc1count})
-write_to_Json(serialize(data),'paddy')
 
 
 ##~~Testing Area End ~~~~~##

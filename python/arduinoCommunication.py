@@ -8,6 +8,9 @@ arduino.write(str.encode("start\n"))
 olddata = ''
 file = actions.read_from_Json('paddy')
 locations = file['account']['locations']
+for location in locations:
+    arduino.write(str.encode(location['name']))
+    arduino.write(str.encode(location['maxCap']))
 curLoc = 0
 
 while True:
