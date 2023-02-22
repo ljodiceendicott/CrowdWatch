@@ -34,13 +34,31 @@ void loop(){
   delay(500);
   lcd.clear();
   delay(500);
-    cycleLeftButtonState = digitalRead(buttonCycleLeftPin);
-  
+    
+  cycleLeftButtonState = digitalRead(buttonCycleLeftPin);
+  cycleRightButtonState = digitalRead(buttonCycleRightPin);
   if(cycleLeftButtonState == HIGH){
     Serial.println('<');
     locnum = locnum +1;
     delay(1000);//Delay to stop double inputs unless they are intentional
   }
+  else if(cycleRightButtonState == HIGH){
+    serial.println('>');
+    locnum = locnum-1;
+    delay(1000);
+  }
+increaseButtonState = digitalRead(buttonIncrease);
+decreaseButtonState = digitalRead(buttonDecrease);
+  if(increaseButtonState == HIGH){
+    Serial.println('+');
+    delay(1000);//Delay to stop double inputs unless they are intentional
+  }
+  else if(decreaseButtonState == HIGH){
+    serial.println('-');
+    delay(1000);
+  }
+
+
   // if(Serial.avaliable()){
   //   phrase = Serial.readStringUntil('\n')
   //   if(phrase.equals("start")){

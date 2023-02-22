@@ -33,6 +33,11 @@ app.post('/endpoint', (request, response) => {
     })
 });
 
+app.get('/updateData', (request, response) => {
+
+})
+
+
 app.get('/logs', (request,response) => {
     database.insert({action: 'Login', date : Date.now()})
     database.find({},(err, data) =>{

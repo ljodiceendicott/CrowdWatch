@@ -1,0 +1,8 @@
+When the json will be on the users device
+
+in order to change the website values, there will be a call to the Express api that will update the values 
+
+
+this will be in the form of a post that will be done on the user device to be done to the website
+
+With this, there wil also be a time stamp for this data being sent. 
