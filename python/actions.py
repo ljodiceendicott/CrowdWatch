@@ -45,7 +45,7 @@ def read_from_Json(name):
 # @param data - data to be written to the file -Type(Json Object)
 # @param name - name of the file to be written -Type(String)  
 def write_to_Json(data, name):
-    with open("../UserFiles/"+name+".json", 'w') as outfile:
+    with open(name+".json", 'w') as outfile:
         outfile.write(data)
 #Use Case
 # adjusting the count of a location then writing to a file
@@ -135,3 +135,15 @@ def EnterDatabase(obj, data, table):
 #Sample call: spreadsheet_Data_Add(account.name, account.data)
 # spreadsheet_Data_Add('paddy',[get_Date(),1,2,3]) 
 # print(serialize(data))
+file = open("..\Website\PeopleWatchSite\public\data\data.json.json")
+data = json.load(file)
+dataloc = data[3]
+dataUpdate = data[3]['amount']
+dataUpdate = dataUpdate + 3
+dataloc.update({"amount":dataUpdate})
+write_to_Json(serialize(data), '..\Website\PeopleWatchSite\public\data\data.json')
+    # locations = data['account']['locations']
+    # loc1= locations[0]
+    # loc1count = locations[0]['count']+1
+    # loc1.update({"count": loc1count})
+    # write_to_Json(serialize(data),'./UserFiles/paddy')

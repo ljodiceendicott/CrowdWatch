@@ -1,8 +1,8 @@
 #include <LiquidCrystal.h>
-const int buttonCycleLeftPin = 6;
-const int buttonCycleRightPin = 7;
-const int buttonincrease = 8;
-const int buttondecrease = 9;
+const int buttonCycleLeftPin = 7;
+const int buttonCycleRightPin = 10;
+const int buttonIncrease = 9;
+const int buttonDecrease = 13;
 
 int myArray[10]={9, 3, 2, 4, 3, 2, 7, 8, 9, 11};
 
@@ -13,7 +13,7 @@ int increaseButtonState, decreaseButtonState = 0;
 
 int locnum = 0;
 String phrase;  
-
+bool write= false;
 
 void setup(){
   Serial.begin(19200);
@@ -23,17 +23,19 @@ void setup(){
 
   pinMode(buttonCycleLeftPin, INPUT);
   pinMode(buttonCycleRightPin, INPUT);
-  pinMode(buttonincrease, INPUT);
-  pinMode(buttondecrease, INPUT);
+  pinMode(buttonIncrease, INPUT);
+  pinMode(buttonDecrease, INPUT);
 
 }
 void loop(){
-
   // lcd.print("ITS NOT A BOMB");
-  lcd.print(myArray[locnum]);
-  delay(500);
-  lcd.clear();
-  delay(500);
+  if(!write){
+    lcd.print(myArray[locnum]);
+    write = true;
+  }
+  // delay(500);
+  // lcd.clear();
+  // delay(500);
     
   cycleLeftButtonState = digitalRead(buttonCycleLeftPin);
   cycleRightButtonState = digitalRead(buttonCycleRightPin);
@@ -42,8 +44,8 @@ void loop(){
     locnum = locnum +1;
     delay(1000);//Delay to stop double inputs unless they are intentional
   }
-  else if(cycleRightButtonState == HIGH){
-    serial.println('>');
+  if(cycleRightButtonState == HIGH){
+    Serial.println('>');
     locnum = locnum-1;
     delay(1000);
   }
@@ -51,10 +53,10 @@ increaseButtonState = digitalRead(buttonIncrease);
 decreaseButtonState = digitalRead(buttonDecrease);
   if(increaseButtonState == HIGH){
     Serial.println('+');
-    delay(1000);//Delay to stop double inputs unless they are intentional
+    delay(500);//Delay to stop double inputs unless they are intentional
   }
-  else if(decreaseButtonState == HIGH){
-    serial.println('-');
+  if(decreaseButtonState == HIGH){
+    Serial.println('-');
     delay(1000);
   }
 

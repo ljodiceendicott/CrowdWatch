@@ -1,0 +1,119 @@
+<html>
+  <header>
+    <script type="text/javascript" src="../data.json.json"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/main.css">
+    <h1>CrowdWatch</h1>
+    <h3>Manual Update</h3>
+  </header>
+  <body>
+    <main>
+      <script>
+        let i = 1;
+        let objList = [];
+        var d = "";
+        fetch("data/data.json.json")
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            for (var i = 0; i < data.length; i++) {
+              var objname = data[i].name;
+              // console.log(name);
+              var objnumber = data[i].amount;
+              // console.log(number)
+              const obj = { name: objname, number: objnumber };
+              objList.push(obj);
+            }
+            window.value = objList;
+            document.getElementById("n").innerHTML = window.value[3].name;
+            document.getElementById("num").innerHTML = window.value[3].number;
+          });
+
+        function nextitem() {
+          i = i + 1;
+          if (i >= window.value.length) {
+            i = 0;
+          }
+          console.log(window.value[i]);
+          document.getElementById("n").innerHTML = window.value[i].name;
+          document.getElementById("num").innerHTML = window.value[i].number;
+        }
+        function previtem() {
+          i = i - 1;
+          if (i >= 0) {
+          var obj = window.value[i];  
+          console.log(window.value[i]);
+          document.getElementById("n").innerHTML = window.value[i].name;
+          document.getElementById("num").innerHTML = window.value[i].number;
+          }
+          else{
+            var size = window.value;
+            console.log(size.length)
+           
+          i = size.length - 1;  
+          document.getElementById("n").innerHTML = window.value[i].name;
+          document.getElementById("num").innerHTML = window.value[i].number;
+
+          }
+         
+        }
+        function addone() {
+          var num = window.value[i].number;
+          num = num + 1;
+          window.value[i].number = num;
+          document.getElementById("num").innerHTML = num;
+        }
+        function subone() {
+          var num = window.value[i].number;
+          if (num > 0) {
+            num = num - 1;
+          }
+          window.value[i].number = num;
+          document.getElementById("num").innerHTML = num;
+        }
+        currentval = window.value[i].name
+        function post(){
+          var time = Date.now();
+          data = {
+            name : currentval,
+            timestamp : time,
+          }
+          const options = {
+            method:'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body :JSON.stringify(data) 
+          }
+          fetch('/endpoint', options)
+        }
+        
+      </script>
+      <!-- <TheWelcome /> -->
+      <div id="content">
+      <div id="itemname">
+      <h3>Section:</h3>
+      <h4 id="n"></h4>
+      </div>
+      <h4 style="color:red">Maximum Amount: </h4>
+      <h4>Section Count:</h4>
+      <h4 id="num"></h4>
+      <div id="cycle">
+        <button onClick="previtem()">Previous Item</button>
+        <button onClick="nextitem()">Next Item</button>
+      </div>
+      <input>
+
+      <div id="update">
+        <button onclick="addone()">+1 Person</button>
+        <button>Update Manually</button>
+        <button onclick="subone()">-1 Person</button>
+
+        <button onclick="post()">post</button>
+      </div>
+      <button><a href="pages/addtoSystem.html">Add New Section</a></button>
+      <button><a href="pages/dashboard.html">Dashboard</a></button>
+      </div>
+    </main>
+  </body>
+</html>

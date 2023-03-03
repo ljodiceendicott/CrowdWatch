@@ -6,10 +6,17 @@
 header {
   line-height: 1.5;
   padding-bottom: 15px;
+  background-color: #333;
+  color: white
 }
 
 body{
   text-align: center;
+  background: lightgray;
+
+}
+body ul{
+  text-align: left;
 }
 button{
   margin-top:10px;
@@ -21,6 +28,31 @@ button{
 
 #content{
   background-color: gainsboro;
+}
+
+#nav_menu {
+	clear: both;
+}
+#nav_menu ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+#nav_menu ul li {
+	float: left;
+	width: 25%;
+}
+#nav_menu ul li a {
+	display: block;
+	text-align: center;
+	padding: .5em 0;
+	text-decoration: none;
+	font-variant: small-caps;
+	font-size: 90%;
+	background-color: navy;
+	color:white;
+	font-weight: bold;
 }
 
 h1{
