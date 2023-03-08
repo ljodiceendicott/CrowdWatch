@@ -6,35 +6,42 @@
 # -updating json file for the website to show info
 # -reads for changes from json
 # -continuously reading from the arduino
-import actions
+import routine
 import schedule 
 import time as tm
 import dataGeneration as dg
 from datetime import time, timedelta, datetime
+import threading
 
-#Example of functions that should be scheduled
-def job1():
-    print("job1")
-def job2():
-    print("Job 2")
-def job3():
-    dg.dataGen()
+#place threading in this file
 
-#Define frequency of jobs
-schedule.every(5).seconds.do(job1)
-schedule.every(10).seconds.do(job2)
-schedule.every(8).seconds.do(job3)
+# #Example of functions that should be scheduled
+# def job1():
+#     print("job1")
+# def job2():
+#     print("Job 2")
+# def job3():
+#     dg.dataGen()
+    
+# #Define frequency of jobs
+# schedule.every(5).seconds.do(job1)
+# schedule.every(10).seconds.do(job2)
+# schedule.every(8).seconds.do(job3)
+
+def start_of_day():
+    print("Start of day")
+
+def middle_of_day():
+    print("Half of day")
+
+def eod():
+    print("End of the day")
+
+schedule.every.day.at("8:00").do(start_of_day)
+schedule.every.day.at("12:00").do(middle_of_day)
+schedule.every.day.at("22:00").do(eod)
 
 while True:
     schedule.run_pending()
     tm.sleep(1)
-# def run_Auto():
-#     print("Scheduler running....")    
-#     schedule.every(5).seconds.do(job1)
-#     schedule.every(3).seconds.do(print("Job 2"))
-    
-# while True:
-#     print("yep")
-#     schedule.run_all()
-#     time.sleep(1)
 

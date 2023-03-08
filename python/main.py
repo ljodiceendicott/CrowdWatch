@@ -33,5 +33,6 @@ if login_Status == False:
 if login_Status:
     print("Running Automation..............")
     while login_Status:#while Logged in print user status run automation 
-        # automation.run_Auto()
+        #Start adding threads to split for Scheduler/Arduino
+        automation()
         x = 3
