@@ -9,6 +9,7 @@
     /> -->
     <link rel="stylesheet" href="../styles/normalize.css" />
     <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/dashboard.css"/>
     <h1>PeopleWatch</h1>
     <h5><i>Beat the Crowd</i></h5>
     <h7>Senior Thesis By Luke Jodice '23</h7>
@@ -22,18 +23,41 @@
     </ul>
   </nav>
   <body>
-    <script>
-      fetch("/currentvalues")
-        .then(response => response.json())
-        .then(data =>{
-          console.log(data)
-        })
-        </script>
   <h1>Dashboard</h1>
-    Last Updated:
+  <p>Last Updated:</p>
+  <p id="date"></p>
+    <div id="reloaded">
+    <p id="values"></p>
     <script>
+      function reset(start) {
+          var ts = document.getElementById('date')
+          var table = document.getElementById('values')
+          table.innerHTML = " "
+          fetch("/currentvalues")
+            .then(response => response.json())
+            .then(data =>{
+              for(var i = start; i<data.account.locations.length; i++){
+                var loc = data.account.locations[i]
+                const location = {name:loc.name, maxCap:loc.maxCap, count:loc.count}
+                table.innerHTML = table.innerHTML + "<br><br><br><br>"+ location.name +"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Count:"+location.count+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Max Capacity"+location.maxCap
+                console.log(data.account.locations[i])
+              }
+              ts.innerHTML = data.TimeStamp
+            })
+          }
 
-    </script>
-    <div id="Date"></div>
+          reset(0)
+        </script>
+        <button onClick = "reset(0)">Refresh</button>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script>
+          $("button").on("click",function(){
+            $('#reloaded').load(' #reloaded')
+            console.log(data)
+            alert("reset")
+          });
+        </script>
+        </div>
+       
   </body>
 </html>
