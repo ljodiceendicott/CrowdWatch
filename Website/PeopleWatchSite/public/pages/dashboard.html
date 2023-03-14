@@ -1,12 +1,12 @@
 <html>
   <header>
-    <script type="text/javascript" src="../data.json.json"></script>
+    <!-- <script type="text/javascript" src="../data.json.json"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
-    />
+    /> -->
     <link rel="stylesheet" href="../styles/normalize.css" />
     <link rel="stylesheet" href="../styles/main.css" />
     <h1>PeopleWatch</h1>
@@ -22,6 +22,18 @@
     </ul>
   </nav>
   <body>
-  
+    <script>
+      fetch("/currentvalues")
+        .then(response => response.json())
+        .then(data =>{
+          console.log(data)
+        })
+        </script>
+  <h1>Dashboard</h1>
+    Last Updated:
+    <script>
+
+    </script>
+    <div id="Date"></div>
   </body>
 </html>

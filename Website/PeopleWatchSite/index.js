@@ -2,11 +2,16 @@ const express = require('express');
 const app = express();
 const Datastore = require('nedb');
 const mysql = require('mysql')
+const fs = require('fs');
+var data = fs.readFileSync('data.json');
+var words = JSON.parse(data);
+// console.log(words)
 
 
-app.listen(3000, ()=> console.log("Listening at 3000"));
+app.listen(3000, ()=> console.log("Connecting to Port: 3000"));
 app.use(express.static('public'));
 app.use(express.json())//can add different options in the parameter, will do this later
+
 
 const database = new Datastore('database.db')
 database.loadDatabase();
@@ -33,7 +38,11 @@ app.post('/endpoint', (request, response) => {
     })
 });
 
-app.get('/updateData', (request, response) => {
+app.get('/currentvalues', (req, res) => {
+    res.json(words)
+})
+
+app.patch("/DataChange/:location/:number?", (request, response) =>{
 
 })
 

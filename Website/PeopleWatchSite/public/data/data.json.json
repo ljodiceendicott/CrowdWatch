@@ -1,1 +1,28 @@
-[{"name": "item1", "amount": 1}, {"name": "item2", "amount": 2}, {"name": "item3", "amount": 3}, {"name": "item4", "amount": 79}, {"name": "item5", "amount": 5}]
+{
+    "account": {
+        "name": "paddy",
+        "locations": [
+            {
+                "name": "bar",
+                "maxCap": 50,
+                "count": 0
+            },
+            {
+                "name": "tavern",
+                "maxCap": 40,
+                "count": 0
+            },
+            {
+                "name": "kitchen",
+                "maxCap": 5,
+                "count": 0
+            },
+            {
+                "name": "patio",
+                "maxCap": 25,
+                "count": 0
+            }
+        ]
+    },
+    "TimeStamp": "2302071604"
+}

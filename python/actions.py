@@ -9,12 +9,17 @@
 # [X] set to json
 # [ ] SQL
 # [X] Read from Arduino
+# [ ] Networking-GET/PUT/POST
 
 import json, sqlite3, time
 from datetime import date, datetime, timedelta
 from timeloop import Timeloop
 from openpyxl import Workbook, load_workbook
+import requests
 
+# ////////////////////////////////////////////////////////////////////////////////////////
+#Json 
+# ////////////////////////////////////////////////////////////////////////////////////////
 #class needed for object to json transfer
 class expJson(object):
     def __init__(self, object):
@@ -62,10 +67,11 @@ def write_to_Json(data, name):
 #order of num => Year-Month-Day-Hour-Minute
 def getDate():
     now = datetime.now()
-    dt_string= now.strftime("%y%m%d%H%M")
+    dt_string= now.strftime("%y-%m-%d %H:%M")
     return dt_string
-
-
+# ////////////////////////////////////////////////////////////////////////////////////////
+#Spreadsheet Code
+# ////////////////////////////////////////////////////////////////////////////////////////
 #Returns instance of Workbook
 #@param name - Name of the business that you are tryin to get access to their spreadsheet
 def workbookInstance(name):
@@ -101,6 +107,9 @@ def nextColumn(fn, wb):
             print("found empty spot @", col)
             return col
 
+# ////////////////////////////////////////////////////////////////////////////////////////
+#SQL DATABASE
+# ////////////////////////////////////////////////////////////////////////////////////////
 #Returns SQL DB object as a Tuple
 #Tuple[0] - sqliteConnection
 #Tuple[1] - Cursor obj
@@ -115,6 +124,18 @@ def EnterDatabase(obj, data, table):
     for i in range(len(data-2)):
         idx = i + 2
         print()  
+        
+# ////////////////////////////////////////////////////////////////////////////////////////  
+#Networking 
+# ////////////////////////////////////////////////////////////////////////////////////////
+def getRequest():
+    print()
+
+def putRequest():
+    print()
+    
+def postRequest():
+    print()
 
 
 ##~~~Testing Area~~~~##
@@ -135,13 +156,16 @@ def EnterDatabase(obj, data, table):
 #Sample call: spreadsheet_Data_Add(account.name, account.data)
 # spreadsheet_Data_Add('paddy',[get_Date(),1,2,3]) 
 # print(serialize(data))
-file = open("..\Website\PeopleWatchSite\public\data\data.json.json")
-data = json.load(file)
-dataloc = data[3]
-dataUpdate = data[3]['amount']
-dataUpdate = dataUpdate + 3
-dataloc.update({"amount":dataUpdate})
-write_to_Json(serialize(data), '..\Website\PeopleWatchSite\public\data\data.json')
+
+
+
+# file = open("..\Website\PeopleWatchSite\public\data\data.json.json")
+# data = json.load(file)
+# dataloc = data[3]
+# dataUpdate = data[3]['amount']
+# dataUpdate = dataUpdate + 3
+# dataloc.update({"amount":dataUpdate})
+# write_to_Json(serialize(data), '..\Website\PeopleWatchSite\public\data\data.json')
     # locations = data['account']['locations']
     # loc1= locations[0]
     # loc1count = locations[0]['count']+1

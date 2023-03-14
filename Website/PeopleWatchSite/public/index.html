@@ -1,24 +1,57 @@
 <html>
   <header>
-    <script type="text/javascript" src="../data.json.json"></script>
+    <!-- <script type="text/javascript" src="../data.json.json"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
-    />
+    /> -->
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/main.css" />
     <h1>PeopleWatch</h1>
     <h5><i>Beat the Crowd</i></h5>
     <h7>Senior Thesis By Luke Jodice '23</h7>
   </header>
+  <script>
+    fetch("/currentvalues")
+      .then(res => res.json())
+      .then(data =>{
+        console.log(data)
+      })
+  function getData(){
+    console.log("dataGrab");
+    fetch("/currentvalues")
+      .then(response => response.json())
+      .then(data =>{
+        console.log(data)
+      })
+  }
+
+  function post(){
+    var time = Date.now();
+    data = {
+      name : 'TEST',
+      timestamp : time,
+    }
+    const options = {
+      method:'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body :JSON.stringify(data) 
+    }
+    console.log(options);
+    fetch('/endpoint', options)
+  }
+  </script>
   <nav id="nav_menu">
     <ul>
       <li><a href="#">Home</a></li>
       <li><a href="pages/dashboard.html">Dashboard</a></li>
       <li><a href="pages/manualUpdate.html">Manual Update</a></li>
       <li><a href="pages/historicalData.html">Historical Data</a></li>
+      <li><button onClick="getData()"></button></li>
     </ul>
   </nav>
   <body>
