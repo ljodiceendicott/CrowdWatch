@@ -1,0 +1,10 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false
+  },
+  "hosting": {
+    "site": "crowdwatch",
+    "public": "public"
+  }
+}

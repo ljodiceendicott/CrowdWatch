@@ -9,41 +9,64 @@
     /> -->
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/main.css" />
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.18.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyCH0gyZ9RUUdHsLHEM7hYhyYHqmQoVJsKY",
+        authDomain: "crowdwatch-ce5b8.firebaseapp.com",
+        projectId: "crowdwatch-ce5b8",
+        storageBucket: "crowdwatch-ce5b8.appspot.com",
+        messagingSenderId: "267648106581",
+        appId: "1:267648106581:web:3a11c1688282768f4cd4dc",
+        measurementId: "G-9GVLV3ZJNE",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
     <h1>PeopleWatch</h1>
     <h5><i>Beat the Crowd</i></h5>
     <h7>Senior Thesis By Luke Jodice '23</h7>
   </header>
   <script>
     fetch("/currentvalues")
-      .then(res => res.json())
-      .then(data =>{
-        console.log(data)
-      })
-  function getData(){
-    console.log("dataGrab");
-    fetch("/currentvalues")
-      .then(response => response.json())
-      .then(data =>{
-        console.log(data)
-      })
-  }
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+    function getData() {
+      console.log("dataGrab");
+      fetch("/currentvalues")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+        });
+    }
 
-  function post(){
-    var time = Date.now();
-    data = {
-      name : 'TEST',
-      timestamp : time,
+    function post() {
+      var time = Date.now();
+      data = {
+        name: "TEST",
+        timestamp: time,
+      };
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      };
+      console.log(options);
+      fetch("/endpoint", options);
     }
-    const options = {
-      method:'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body :JSON.stringify(data) 
-    }
-    console.log(options);
-    fetch('/endpoint', options)
-  }
   </script>
   <nav id="nav_menu">
     <ul>
@@ -55,7 +78,7 @@
   </nav>
   <body>
     <h3>How this works</h3>
-    <button onClick="getData()"> print data</button>
+    <button onClick="getData()">print data</button>
     <main>
       <h3>What is PeopleWatch?</h3>
       <p>
