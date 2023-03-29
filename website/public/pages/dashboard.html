@@ -30,7 +30,7 @@
     <p id="date"></p>
     <div id="reloaded">
       <p id="values"></p>
-      <table id="dash">
+      <table id="dash" class="sortable">
         <tbody></tbody>
       </table>
       <script>
@@ -52,31 +52,36 @@
                   count: loc.count,
                 };
                 locations.push(location);
-                values.innerHTML =
-                  values.innerHTML +
-                  "<br><br><br><br>" +
-                  location.name +
-                  "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Count:" +
-                  location.count +
-                  "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Max Capacity" +
-                  location.maxCap;
+                // values.innerHTML =
+                //   values.innerHTML +
+                //   "<br><br><br><br>" +
+                //   location.name +
+                //   "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Count:" +
+                //   location.count +
+                //   "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Max Capacity" +
+                //   location.maxCap;
                 console.log(data.account.locations[i]);
               }
+              dash.innerHTML =
+                '<thead> <tr><th onclick="sortTable(0)">Name</th><th onclick="sortTable(1)">count</th></tr></thead><tbody>';
               for (var i = 0; i < locations.length; i++) {
                 var row =
                   "<tr><td>" +
                   locations[i].name +
-                  " " +
+                  "</td><td>" +
                   locations[i].count +
-                  "</td><tr>";
+                  "</td></tr>";
                 dash.innerHTML += row;
               }
-              $("dash").dynatable();
+              dash.innerHTML = dash.innerHTML + "</tbody>";
               console.log(locations);
               ts.innerHTML = data.TimeStamp;
             });
         }
-
+        function sortTable(n) {
+          if (n == 0) {
+          }
+        }
         reset(0);
       </script>
       <button onClick="reset(0)">Refresh</button>
