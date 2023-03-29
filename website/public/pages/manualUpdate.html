@@ -28,7 +28,7 @@
       <option>SELECT LOCATION</option>
     </select>
     <br /><br />
-    Current Count <input type="text" />
+    Current Count
     <p id="values"></p>
     <script>
       let locations = [];
@@ -67,6 +67,8 @@
       }
       function changeval() {
         var selection = document.getElementById("loc");
+        var value = document.getElementById("values");
+        value.innerHTML = locations[selection.value].count;
         console.log(selection.value);
         console.log(locations[selection.value]);
       }
