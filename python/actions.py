@@ -7,7 +7,6 @@
 # checklist
 # [X] spreadsheet
 # [X] set to json
-# [ ] SQL
 # [X] Read from Arduino
 # [ ] Networking-GET/PUT/POST
 
@@ -106,8 +105,6 @@ def spreadsheet_Data_Add(fn, data):
         print(cell.value)
         cell.value = data[i]
     workbook.save("../UserFiles/" + fn + "businessAnalysis.xlsx")
-
-
 # Returns the index of the next avaliable column to be written to
 # @param fn - File name that will be written to
 # @param wb - Instance of the Workbook
@@ -151,6 +148,10 @@ def EnterDatabase(obj, data, table):
 # Networking
 # ////////////////////////////////////////////////////////////////////////////////////////
 
+# ////////////////////////////////////////////////////////////////////////////////////////
+# Networking
+# ////////////////////////////////////////////////////////////////////////////////////////
+
 # This will be the inital communication from python
 # loading setting the values in the db
 def getRequest():
@@ -159,12 +160,30 @@ def getRequest():
     print()
 
 
-def putRequest():
-    print()
+
+def putRequest(location):
+    r = requests.put("http://localhost:3000/putReq", data={})
+    # success code
+    print(r)
+    # Content of Req
 
 
 def postRequest():
-    print()
+    # URL for testing
+    url = "http://localhost:3000/test"
+    # URL for live -- To be added
+    data = {"status": "connected", "date": getDate()}
+    postlog(data)
+    x = requests.post(url, json=data)
+
+    print(x.text)
+
+
+def postlog(data):
+    url = "http://localhost:3000/logs"
+    data = data
+    x = requests.post(url, json=data)
+    print(x.text)
 
 
 ##~~~Testing Area~~~~##
@@ -180,6 +199,8 @@ def postRequest():
 
 
 ##~~Testing Area End ~~~~~##
+
+postRequest()
 # nextColumn('paddy')
 # Sample spreadsheet_Data_Add(NAME_OF_BUS, DATA_FROM_BUS)
 # Sample call: spreadsheet_Data_Add(account.name, account.data)

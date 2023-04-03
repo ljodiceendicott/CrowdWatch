@@ -16,3 +16,10 @@ table
 table, th, td, tr{
     border: 1px solid black;
   }
+th{
+    padding:5px;
+}
+th:hover{
+    text-transform: uppercase;
+}
+
