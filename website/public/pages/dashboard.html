@@ -34,11 +34,18 @@
         <tbody></tbody>
       </table>
       <script>
+        let name_click = 0,
+          maxCap_click = 0,
+          count_click = 0;
+        const locations = [];
+
+        setInterval(() => {
+          console.log("this is the interval");
+        }, 3000);
+
         function reset(start) {
-          var locations = [];
           var ts = document.getElementById("date");
           var values = document.getElementById("values");
-          var dash = document.getElementById("dash");
           dash.innerHTML = "";
           values.innerHTML = "";
           fetch("/currentvalues")
@@ -52,37 +59,109 @@
                   count: loc.count,
                 };
                 locations.push(location);
-                // values.innerHTML =
-                //   values.innerHTML +
-                //   "<br><br><br><br>" +
-                //   location.name +
-                //   "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Count:" +
-                //   location.count +
-                //   "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Max Capacity" +
-                //   location.maxCap;
-                console.log(data.account.locations[i]);
               }
-              dash.innerHTML =
-                '<thead> <tr><th onclick="sortTable(0)">Name</th><th onclick="sortTable(1)">count</th></tr></thead><tbody>';
-              for (var i = 0; i < locations.length; i++) {
-                var row =
-                  "<tr><td>" +
-                  locations[i].name +
-                  "</td><td>" +
-                  locations[i].count +
-                  "</td></tr>";
-                dash.innerHTML += row;
-              }
-              dash.innerHTML = dash.innerHTML + "</tbody>";
-              console.log(locations);
-              ts.innerHTML = data.TimeStamp;
+              loadtable(locations);
             });
+          // ts.innerHTML = data.TimeStamp;
+        }
+        function loadtable(locArray) {
+          var dash = document.getElementById("dash");
+          dash.innerHTML =
+            '<thead> <tr><th onclick="sortTable(0)">Name</th><th onclick="sortTable(1)">Max Capacity</th><th onclick="sortTable(2)">Current count</th></tr></thead><tbody>';
+          for (var i = 0; i < locArray.length; i++) {
+            var row =
+              "<tr><td>" +
+              locArray[i].name +
+              "</td><td>" +
+              locArray[i].maxCap +
+              "</td><td>" +
+              locArray[i].count +
+              "</td></tr>";
+            dash.innerHTML += row;
+          }
+          // dash.innerHTML = dash.innerHTML + "</tbody>";
+          // console.log(locArray);
         }
         function sortTable(n) {
           if (n == 0) {
+            //sorting name
+            name_click = name_click + 1;
+            var order = name_click % 2;
+            if (order == 1) {
+              //A-Z
+              sort(1, "name");
+            } else {
+              //Z-A
+              sort(2, "name");
+            }
+          } else if (n == 1) {
+            //sorting max capacity
+            maxCap_click = maxCap_click + 1;
+            var caporder = maxCap_click % 2;
+            if (caporder == 1) {
+              //low -> High
+              sort(1, "maxCap");
+            } else {
+              //High -> low
+              sort(2, "maxCap");
+            }
+          } else if (n == 2) {
+            //sorting count
+            count_click = count_click + 1;
+            var countOrder = count_click % 2;
+            if (countOrder == 1) {
+              //low -> High
+              sort(1, "count");
+            } else {
+              //High -> low
+              sort(2, "count");
+            }
           }
         }
+        function sort(style, member) {
+          if (style == 1) {
+            //LOW->HIGH //A-Z
+            if (member == "name") {
+              locations.sort((a, b) => {
+                const nameA = a.name.toUpperCase();
+                const nameB = b.name.toUpperCase();
+                if (nameA < nameB) {
+                  return -1;
+                }
+                if (nameA > nameB) {
+                  return 1;
+                }
+                return 0;
+              });
+            } else if (member == "maxCap") {
+              locations.sort((a, b) => a.maxCap - b.maxCap);
+            } else if (member == "count") {
+              console.log(locations.sort((a, b) => a.count - b.count));
+            }
+          } else if (style == 2) {
+            if (member == "name") {
+              locations.sort((a, b) => {
+                const nameA = a.name.toUpperCase();
+                const nameB = b.name.toUpperCase();
+                if (nameA > nameB) {
+                  return -1;
+                }
+                if (nameA < nameB) {
+                  return 1;
+                }
+                return 0;
+              });
+            } else if (member == "maxCap") {
+              locations.sort((a, b) => b.maxCap - a.maxCap);
+            } else if (member == "count") {
+              console.log(locations.sort((a, b) => b.count - a.count));
+            }
+          }
+          loadtable(locations);
+        }
         reset(0);
+        console.log(1 % 2); //result in 1
+        console.log(2 % 2); //result in 0
       </script>
       <button onClick="reset(0)">Refresh</button>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>

@@ -8,3 +8,9 @@
 {
     text-decoration-style: bold;
 }
+th{
+    padding:5px;
+}
+th:hover{
+    text-transform: uppercase;
+}

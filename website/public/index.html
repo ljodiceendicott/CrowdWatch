@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <header>
     <!-- <script type="text/javascript" src="../data.json.json"></script>
@@ -15,35 +16,35 @@
   </header>
   <script>
     fetch("/currentvalues")
-      .then(res => res.json())
-      .then(data =>{
-        console.log(data)
-      })
-  function getData(){
-    console.log("dataGrab");
-    fetch("/currentvalues")
-      .then(response => response.json())
-      .then(data =>{
-        console.log(data)
-      })
-  }
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+    function getData() {
+      console.log("dataGrab");
+      fetch("/currentvalues")
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+        });
+    }
 
-  function post(){
-    var time = Date.now();
-    data = {
-      name : 'TEST',
-      timestamp : time,
+    function post() {
+      var time = Date.now();
+      data = {
+        name: "TEST",
+        timestamp: time,
+      };
+      const options = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      };
+      console.log(options);
+      fetch("/endpoint", options);
     }
-    const options = {
-      method:'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body :JSON.stringify(data) 
-    }
-    console.log(options);
-    fetch('/endpoint', options)
-  }
   </script>
   <nav id="nav_menu">
     <ul>
@@ -55,7 +56,7 @@
   </nav>
   <body>
     <h3>How this works</h3>
-    <button onClick="getData()"> print data</button>
+    <button onClick="getData()">print data</button>
     <main>
       <h3>What is PeopleWatch?</h3>
       <p>
