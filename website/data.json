@@ -1,108 +1,327 @@
 {
     "account": {
         "name": "paddy",
-        "locations": 
-        [
-                {
-                    "name": "Men's Clothing Section",
-                    "count": 12,
-                    "maxCap": 25
-                },
-                {
-                    "name": "Women's Clothing Section",
-                    "count": 10,
-                    "maxCap": 20
-                },
-                {
-                    "name": "Electronics Section",
-                    "count": 8,
-                    "maxCap": 15
-                },
-                {
-                    "name": "Shoe Section",
-                    "count": 15,
-                    "maxCap": 30
-                },
-                {
-                    "name": "Toy Section",
-                    "count": 20,
-                    "maxCap": 50
-                },
-                {
-                    "name": "Home Decor Section",
-                    "count": 7,
-                    "maxCap": 12
-                },
-                {
-                    "name": "Pet Supplies Section",
-                    "count": 6,
-                    "maxCap": 10
-                },
-                {
-                    "name": "Beauty and Personal Care Section",
-                    "count": 9,
-                    "maxCap": 18
-                },
-                {
-                    "name": "Jewelry Section",
-                    "count": 6,
-                    "maxCap": 10
-                },
-                {
-                    "name": "Sporting Goods Section",
-                    "count": 9,
-                    "maxCap": 18
-                },
-                {
-                    "name": "Baby Products Section",
-                    "count": 7,
-                    "maxCap": 12
-                },
-                {
-                    "name": "Kitchen and Dining Section",
-                    "count": 10,
-                    "maxCap": 20
-                },
-                {
-                    "name": "Appliances Section",
-                    "count": 8,
-                    "maxCap": 15
-                },
-                {
-                    "name": "Food and Beverage Section",
-                    "count": 12,
-                    "maxCap": 25
-                },
-                {
-                    "name": "Health and Wellness Section",
-                    "count": 11,
-                    "maxCap": 22
-                },
-                {
-                    "name": "Outdoor and Garden Section",
-                    "count": 6,
-                    "maxCap": 10
-                },
-                {
-                    "name": "Furniture Section",
-                    "count": 13,
-                    "maxCap": 27
-                },
-                {
-                    "name": "Entertainment Section",
-                    "count": 8,
-                    "maxCap": 15
-                },
-                {
-                    "name": "Home Improvement Section",
-                    "count": 11,
-                    "maxCap": 22
-                },
-                {
-                    "name": "Office Supplies Section",
-                    "count": 14,
-                    "maxCap": 28
-                }
+        "locations": [
+            {
+                "name": "Men's Clothing Section",
+                "count": 12,
+                "maxCap": 25,
+                "History": [
+                    {
+                        "Date": "3/25/2023",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 4,
+                        "Highest_Cap_Times": [
+                            "12:30",
+                            "13:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Women's Clothing Section",
+                "count": 10,
+                "maxCap": 20,
+                "History": [
+                    {
+                        "Date": "3/25/2023",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 4,
+                        "Highest_Cap_Times": [
+                            "12:30",
+                            "13:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Electronics Section",
+                "count": 8,
+                "maxCap": 15,
+                "History": [
+                    {
+                        "Date": "3/25/2023",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 4,
+                        "Highest_Cap_Times": [
+                            "12:30",
+                            "13:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Shoe Section",
+                "count": 15,
+                "maxCap": 30,
+                "History": [
+                    {
+                        "Date": "3/25/2023",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 4,
+                        "Highest_Cap_Times": [
+                            "12:30",
+                            "13:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Toy Section",
+                "count": 20,
+                "maxCap": 50,
+                "History": [
+                    {
+                        "Date": "3/25/2023",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 4,
+                        "Highest_Cap_Times": [
+                            "12:30",
+                            "13:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Home Decor Section",
+                "count": 7,
+                "maxCap": 12,
+                "History": [
+                    {
+                        "Date": "3/25/2023",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 4,
+                        "Highest_Cap_Times": [
+                            "12:30",
+                            "13:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Pet Supplies Section",
+                "count": 6,
+                "maxCap": 10,
+                "History": [
+                    {
+                        "Date": "3/25/2023",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 4,
+                        "Highest_Cap_Times": [
+                            "12:30",
+                            "13:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Beauty and Personal Care Section",
+                "count": 9,
+                "maxCap": 18,
+                "History": [
+                    {
+                        "Date": "3/25/2023",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 4,
+                        "Highest_Cap_Times": [
+                            "12:30",
+                            "13:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Jewelry Section",
+                "count": 6,
+                "maxCap": 10,
+                "History": [
+                    {
+                        "Date": "3/25/2023",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 4,
+                        "Highest_Cap_Times": [
+                            "12:30",
+                            "13:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Sporting Goods Section",
+                "count": 9,
+                "maxCap": 18,
+                "History": [
+                    {
+                        "Date": "3/25/2023",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 4,
+                        "Highest_Cap_Times": [
+                            "12:30",
+                            "13:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Baby Products Section",
+                "count": 7,
+                "maxCap": 12,
+                "History": [
+                    {
+                        "Date": "3/25/2023",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 4,
+                        "Highest_Cap_Times": [
+                            "12:30",
+                            "13:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Kitchen and Dining Section",
+                "count": 10,
+                "maxCap": 20,
+                "History": [
+                    {
+                        "Date": "3/25/2023",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 4,
+                        "Highest_Cap_Times": [
+                            "12:30",
+                            "13:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Appliances Section",
+                "count": 8,
+                "maxCap": 15,
+                "History": [
+                    {
+                        "Date": "3/25/2023",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 4,
+                        "Highest_Cap_Times": [
+                            "12:30",
+                            "13:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Food and Beverage Section",
+                "count": 12,
+                "maxCap": 25,
+                "History": [
+                    {
+                        "Date": "3/25/2023",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 4,
+                        "Highest_Cap_Times": [
+                            "12:30",
+                            "13:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Health and Wellness Section",
+                "count": 11,
+                "maxCap": 22,
+                "History": [
+                    {
+                        "Date": "3/25/2023",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 4,
+                        "Highest_Cap_Times": [
+                            "12:30",
+                            "13:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Outdoor and Garden Section",
+                "count": 6,
+                "maxCap": 10,
+                "History": [
+                    {
+                        "Date": "3/25/2023",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 4,
+                        "Highest_Cap_Times": [
+                            "12:30",
+                            "13:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Furniture Section",
+                "count": 13,
+                "maxCap": 27,
+                "History": [
+                    {
+                        "Date": "3/25/2023",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 4,
+                        "Highest_Cap_Times": [
+                            "12:30",
+                            "13:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Entertainment Section",
+                "count": 8,
+                "maxCap": 15,
+                "History": [
+                    {
+                        "Date": "3/25/2023",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 4,
+                        "Highest_Cap_Times": [
+                            "12:30",
+                            "13:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Home Improvement Section",
+                "count": 11,
+                "maxCap": 22,
+                "History": [
+                    {
+                        "Date": "3/25/2023",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 4,
+                        "Highest_Cap_Times": [
+                            "12:30",
+                            "13:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Office Supplies Section",
+                "count": 14,
+                "maxCap": 28,
+                "History": [
+                    {
+                        "Date": "3/25/2023",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 4,
+                        "Highest_Cap_Times": [
+                            "12:30",
+                            "13:00"
+                        ]
+                    }
+                ]
+            }
         ]
     },
     "TimeStamp": "2302071604"

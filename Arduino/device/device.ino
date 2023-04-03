@@ -29,10 +29,13 @@ void setup(){
 }
 void loop(){
   // lcd.print("ITS NOT A BOMB");
-  if(!write){
-    lcd.print(myArray[locnum]);
-    write = true;
-  }
+  // if(!write){
+  //   lcd.print(myArray[locnum]);
+  //   write = true;
+  // }
+  lcd.print("Test Location");
+  lcd.setCursor(0, 1);
+  lcd.print("Count: alot     ");
   // delay(500);
   // lcd.clear();
   // delay(500);

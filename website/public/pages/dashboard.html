@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="../styles/main.css" />
     <link rel="stylesheet" href="../styles/dashboard.css" />
 
+    <link rel="stylesheet" href="../styles/sortable.min.css" />
+
+    <script src="sortable.min.js"></script>
+
     <h1>PeopleWatch</h1>
     <h5><i>Beat the Crowd</i></h5>
     <h7>Senior Thesis By Luke Jodice '23</h7>
@@ -48,6 +52,7 @@
           var values = document.getElementById("values");
           dash.innerHTML = "";
           values.innerHTML = "";
+
           fetch("/currentvalues")
             .then((response) => response.json())
             .then((data) => {
@@ -58,6 +63,7 @@
                   maxCap: loc.maxCap,
                   count: loc.count,
                 };
+
                 locations.push(location);
               }
               loadtable(locations);

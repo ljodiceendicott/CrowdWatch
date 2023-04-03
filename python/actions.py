@@ -105,8 +105,6 @@ def spreadsheet_Data_Add(fn, data):
         print(cell.value)
         cell.value = data[i]
     workbook.save("../UserFiles/" + fn + "businessAnalysis.xlsx")
-
-
 # Returns the index of the next avaliable column to be written to
 # @param fn - File name that will be written to
 # @param wb - Instance of the Workbook
@@ -150,9 +148,17 @@ def EnterDatabase(obj, data, table):
 # Networking
 # ////////////////////////////////////////////////////////////////////////////////////////
 
+# ////////////////////////////////////////////////////////////////////////////////////////
+# Networking
+# ////////////////////////////////////////////////////////////////////////////////////////
 
+# This will be the inital communication from python
+# loading setting the values in the db
 def getRequest():
+    # Replace this with the host website when a website is hosted
+    url = "http://localhost:3000"
     print()
+
 
 
 def putRequest(location):
@@ -160,7 +166,6 @@ def putRequest(location):
     # success code
     print(r)
     # Content of Req
-    print()
 
 
 def postRequest():
