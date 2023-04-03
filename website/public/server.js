@@ -6,9 +6,6 @@ const fs = require("fs");
 var data = fs.readFileSync("data.json");
 var words = JSON.parse(data);
 
-// console.log(words)
-var DataChange = false;
-
 app.listen(3000, () => console.log("Connecting to Port: 3000"));
 app.use(express.static("public"));
 app.use(express.json()); //can add different options in the parameter, will do this later
@@ -38,22 +35,6 @@ app.post("/endpoint", (request, response) => {
   });
 });
 
-
-app.post("/test", (request, response) => {
-  const data = request.body;
-  console.log(data);
-  response.json({
-    status: "IT  Worked",
-  });
-});
-
-app.post("/logs", (req, resp) => {
-  const data = req.body;
-  database.insert(data);
-  resp.json({
-    status: "100 Data sent to DB",
-  });
-});
 app.get("/currentvalues", (req, res) => {
   res.json(words);
 });

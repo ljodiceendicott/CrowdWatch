@@ -150,8 +150,15 @@ def EnterDatabase(obj, data, table):
 # Networking
 # ////////////////////////////////////////////////////////////////////////////////////////
 
+# ////////////////////////////////////////////////////////////////////////////////////////
+# Networking
+# ////////////////////////////////////////////////////////////////////////////////////////
 
+# This will be the inital communication from python
+# loading setting the values in the db
 def getRequest():
+    # Replace this with the host website when a website is hosted
+    url = "http://localhost:3000"
     print()
 
 
@@ -164,6 +171,13 @@ def putRequest(locationObj):
     print(r)
     # Content of Req
     print(r.content)
+
+
+def putRequest(location):
+    r = requests.put("http://localhost:3000/putReq", data={})
+    # success code
+    print(r)
+    # Content of Req
 
 
 def postRequest():
