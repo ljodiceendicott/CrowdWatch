@@ -155,12 +155,15 @@ def getRequest():
     print()
 
 
-def putRequest(location):
-    r = requests.put("http://localhost:3000/putReq", data={})
+def putRequest(locationObj):
+    r = requests.put(
+        "http://localhost:3000/putReq",
+        data={name: locationObj.name, count: locationObj.count},
+    )
     # success code
     print(r)
     # Content of Req
-    print()
+    print(r.content)
 
 
 def postRequest():
@@ -168,6 +171,17 @@ def postRequest():
     url = "http://localhost:3000/test"
     # URL for live -- To be added
     data = {"status": "connected", "date": getDate()}
+    postlog(data)
+    x = requests.post(url, json=data)
+
+    print(x.text)
+
+
+def postRequest(data):
+    # URL for testing
+    url = "http://localhost:3000/test"
+    # URL for live -- To be added
+    data = {"status": "connected", "data": data}
     postlog(data)
     x = requests.post(url, json=data)
 
@@ -182,11 +196,13 @@ def postlog(data):
 
 
 ##~~~Testing Area~~~~##
-# print(read_from_Json('paddy'))
-# data = read_from_Json('paddy')
-# locations = data['account']['locations']
-# # locations[0]["count"] = locations[0]["count"] + 1
-# # print(locations[0])
+print(read_from_Json("paddyFull"))
+data = read_from_Json("paddyFull")
+locations = data["account"]["locations"]
+
+postRequest(locations[0])
+# locations[0]["count"] = locations[0]["count"] + 1
+# print(locations[0])
 # print(locations)
 # for location in locations:
 #     print(location['name'])
@@ -195,7 +211,9 @@ def postlog(data):
 
 ##~~Testing Area End ~~~~~##
 
-postRequest()
+# postRequest()
+
+
 # nextColumn('paddy')
 # Sample spreadsheet_Data_Add(NAME_OF_BUS, DATA_FROM_BUS)
 # Sample call: spreadsheet_Data_Add(account.name, account.data)

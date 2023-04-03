@@ -1,1 +1,108 @@
-{"account": {"name": "paddy", "locations": [{"name": "bar", "maxCap": 50, "count": 0}, {"name": "tavern", "maxCap": 40, "count": 0}, {"name": "kitchen", "maxCap": 5, "count": 0}, {"name": "patio", "maxCap": 25, "count": 0}]}, "TimeStamp": "2302071604"}
+{
+    "account": {
+        "name": "paddy",
+        "locations": [
+            {
+                "name": "Men's Clothing Section",
+                "count": 12,
+                "maxCap": 25
+            },
+            {
+                "name": "Women's Clothing Section",
+                "count": 10,
+                "maxCap": 20
+            },
+            {
+                "name": "Electronics Section",
+                "count": 8,
+                "maxCap": 15
+            },
+            {
+                "name": "Shoe Section",
+                "count": 15,
+                "maxCap": 30
+            },
+            {
+                "name": "Toy Section",
+                "count": 20,
+                "maxCap": 50
+            },
+            {
+                "name": "Home Decor Section",
+                "count": 7,
+                "maxCap": 12
+            },
+            {
+                "name": "Pet Supplies Section",
+                "count": 6,
+                "maxCap": 10
+            },
+            {
+                "name": "Beauty and Personal Care Section",
+                "count": 9,
+                "maxCap": 18
+            },
+            {
+                "name": "Jewelry Section",
+                "count": 6,
+                "maxCap": 10
+            },
+            {
+                "name": "Sporting Goods Section",
+                "count": 9,
+                "maxCap": 18
+            },
+            {
+                "name": "Baby Products Section",
+                "count": 7,
+                "maxCap": 12
+            },
+            {
+                "name": "Kitchen and Dining Section",
+                "count": 10,
+                "maxCap": 20
+            },
+            {
+                "name": "Appliances Section",
+                "count": 8,
+                "maxCap": 15
+            },
+            {
+                "name": "Food and Beverage Section",
+                "count": 12,
+                "maxCap": 25
+            },
+            {
+                "name": "Health and Wellness Section",
+                "count": 11,
+                "maxCap": 22
+            },
+            {
+                "name": "Outdoor and Garden Section",
+                "count": 6,
+                "maxCap": 10
+            },
+            {
+                "name": "Furniture Section",
+                "count": 13,
+                "maxCap": 27
+            },
+            {
+                "name": "Entertainment Section",
+                "count": 8,
+                "maxCap": 15
+            },
+            {
+                "name": "Home Improvement Section",
+                "count": 11,
+                "maxCap": 22
+            },
+            {
+                "name": "Office Supplies Section",
+                "count": 14,
+                "maxCap": 28
+            }
+        ]
+    },
+    "TimeStamp": "2302071604"
+}

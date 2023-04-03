@@ -1,0 +1,211 @@
+{
+    "account": {
+        "name": "paddy",
+        "locations": [
+            {
+                "Name": "Men's Clothing Section",
+                "Current_Count": 12,
+                "MaxCap": 25,
+                "History": [
+                    {
+                        "Date": "1/2/23",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 10,
+                        "Highest_Cap_Times": [
+                            "12:30",
+                            "13:00",
+                            "14:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Women's Clothing Section",
+                "Current_Count": 8,
+                "MaxCap": 20,
+                "History": [
+                    {
+                        "Date": "1/2/23",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 20,
+                        "Highest_Cap_Times": [
+                            "10:00",
+                            "11:00",
+                            "12:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Electronics Section",
+                "Current_Count": 15,
+                "MaxCap": 30,
+                "History": [
+                    {
+                        "Date": "1/2/23",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 25,
+                        "Highest_Cap_Times": [
+                            "14:30",
+                            "15:00",
+                            "16:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Home Goods Section",
+                "Current_Count": 10,
+                "MaxCap": 20,
+                "History": [
+                    {
+                        "Date": "1/2/23",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 10,
+                        "Highest_Cap_Times": [
+                            "10:30",
+                            "11:30",
+                            "12:30"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Sporting Goods Section",
+                "Current_Count": 18,
+                "MaxCap": 35,
+                "History": [
+                    {
+                        "Date": "1/2/23",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 30,
+                        "Highest_Cap_Times": [
+                            "16:30",
+                            "17:00",
+                            "18:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Toy Section",
+                "Current_Count": 5,
+                "MaxCap": 15,
+                "History": [
+                    {
+                        "Date": "1/2/23",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 10,
+                        "Highest_Cap_Times": [
+                            "13:30",
+                            "14:30",
+                            "15:30"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Jewelry Section",
+                "Current_Count": 7,
+                "MaxCap": 18,
+                "History": [
+                    {
+                        "Date": "1/2/23",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 10,
+                        "Highest_Cap_Times": [
+                            "11:30",
+                            "12:00",
+                            "13:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Footwear Section",
+                "Current_Count": 9,
+                "MaxCap": 18,
+                "History": [
+                    {
+                        "Date": "1/2/23",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 10,
+                        "Highest_Cap_Times": [
+                            "13:30",
+                            "14:00",
+                            "15:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Pet Supplies Section",
+                "Current_Count": 6,
+                "MaxCap": 12,
+                "History": [
+                    {
+                        "Date": "1/2/23",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 10,
+                        "Highest_Cap_Times": [
+                            "11:00",
+                            "12:00",
+                            "13:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Furniture Section",
+                "Current_Count": 8,
+                "MaxCap": 20,
+                "History": [
+                    {
+                        "Date": "1/2/23",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 10,
+                        "Highest_Cap_Times": [
+                            "12:30",
+                            "13:00",
+                            "14:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Kitchenware Section",
+                "Current_Count": 11,
+                "MaxCap": 25,
+                "History": [
+                    {
+                        "Date": "1/2/23",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 10,
+                        "Highest_Cap_Times": [
+                            "14:00",
+                            "15:00",
+                            "16:00"
+                        ]
+                    }
+                ]
+            },
+            {
+                "Name": "Books and Magazines Section",
+                "Current_Count": 7,
+                "MaxCap": 15,
+                "History": [
+                    {
+                        "Date": "1/2/23",
+                        "Day_of_Week": "Mon",
+                        "Highest_Cap_Amount": 10,
+                        "Highest_Cap_Times": [
+                            "11:30",
+                            "12:00",
+                            "13:00"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
