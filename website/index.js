@@ -38,7 +38,6 @@ app.post("/endpoint", (request, response) => {
   });
 });
 
-
 app.post("/test", (request, response) => {
   const data = request.body;
   console.log(data);
@@ -54,11 +53,16 @@ app.post("/logs", (req, resp) => {
     status: "100 Data sent to DB",
   });
 });
+
 app.get("/currentvalues", (req, res) => {
   res.json(words);
 });
 
-app.patch("/DataChange/:location/:number?", (request, response) => {});
+app.get("/isUpdated", (req, res) => {
+  res.json({
+    isChanged: DataChange,
+  });
+});
 
 app.get("/logs", (request, response) => {
   database.insert({ action: "Login", date: Date.now() });
@@ -72,6 +76,11 @@ app.get("/logs", (request, response) => {
   });
 });
 
-// router.get('/', function(req, res, next) {
+app.patch("/DataChange/:location/:number?", (request, response) => {
+  words[request.params[0]] = request.params[1];
+  console.log(words);
+});
+
+// router.get('/pages/dashboard.html', function(req, res, next) {
 //     res.send('respond with a resource')
 // });

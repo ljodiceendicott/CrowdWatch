@@ -1,4 +1,5 @@
 {
     "python.formatting.provider": "black",
-    "livePreview.autoRefreshPreview": "On Changes to Saved Files"
+    "livePreview.autoRefreshPreview": "On Changes to Saved Files",
+    "livePreview.defaultPreviewPath": "/website/public/pages/dashboard.html"
 }

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <header>
     <script type="text/javascript" src="../data.json.json"></script>
@@ -27,7 +28,6 @@
       <select id="loc" onchange="changeval()">
         <option>SELECT LOCATION</option>
       </select>
-      <input type="text" />
       <p id="values"></p>
       <script>
         let locations = [];
@@ -72,6 +72,7 @@
           console.log(selection.value);
           console.log(locations[selection.value]);
         }
+
         reset(0);
         // console.log(locations);
       </script>

@@ -30,14 +30,17 @@
   </nav>
   <body>
     <h1>Dashboard</h1>
-    <p>Last Updated:</p>
-    <p id="date"></p>
+
     <div id="reloaded">
       <p id="values"></p>
       <table id="dash" class="sortable">
         <tbody></tbody>
       </table>
+      <p>Last Updated:</p>
+      <p id="date"></p>
       <script>
+        var ts = document.getElementById("date");
+        ts.textContent = new Date();
         let name_click = 0,
           maxCap_click = 0,
           count_click = 0;
@@ -45,10 +48,22 @@
 
         setInterval(() => {
           console.log("this is the interval");
+          fetch("/isUpdated")
+            .then((response) => response.json())
+            .then((data) => {
+              //update the lastupdated value regardless of if there
+              //is values to update or not
+              if (!data.isChanged) {
+                console.log("data has not changed!");
+                //No change in data
+              } else {
+                console.log("Data has changed");
+                //Call update on data
+              }
+            });
         }, 3000);
 
         function reset(start) {
-          var ts = document.getElementById("date");
           var values = document.getElementById("values");
           dash.innerHTML = "";
           values.innerHTML = "";
@@ -63,9 +78,17 @@
                   maxCap: loc.maxCap,
                   count: loc.count,
                 };
-
-                locations.push(location);
+                found = false;
+                for (var j = 0; j < locations.length; j++) {
+                  if (locations[i] == location) {
+                    found = true;
+                  }
+                }
+                if (!found) {
+                  locations.push(location);
+                }
               }
+              console.log("test");
               loadtable(locations);
             });
           // ts.innerHTML = data.TimeStamp;
