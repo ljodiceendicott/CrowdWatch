@@ -6,7 +6,7 @@
                 "Name": "Men's Clothing Section",
                 "Current_Count": 12,
                 "MaxCap": 25,
-                "History": [
+                "history": [
                     {
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",
@@ -23,7 +23,7 @@
                 "Name": "Women's Clothing Section",
                 "Current_Count": 8,
                 "MaxCap": 20,
-                "History": [
+                "history": [
                     {
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",
@@ -40,7 +40,7 @@
                 "Name": "Electronics Section",
                 "Current_Count": 15,
                 "MaxCap": 30,
-                "History": [
+                "history": [
                     {
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",
@@ -57,7 +57,7 @@
                 "Name": "Home Goods Section",
                 "Current_Count": 10,
                 "MaxCap": 20,
-                "History": [
+                "history": [
                     {
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",
@@ -74,7 +74,7 @@
                 "Name": "Sporting Goods Section",
                 "Current_Count": 18,
                 "MaxCap": 35,
-                "History": [
+                "history": [
                     {
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",
@@ -91,7 +91,7 @@
                 "Name": "Toy Section",
                 "Current_Count": 5,
                 "MaxCap": 15,
-                "History": [
+                "history": [
                     {
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",
@@ -108,7 +108,7 @@
                 "Name": "Jewelry Section",
                 "Current_Count": 7,
                 "MaxCap": 18,
-                "History": [
+                "history": [
                     {
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",
@@ -125,7 +125,7 @@
                 "Name": "Footwear Section",
                 "Current_Count": 9,
                 "MaxCap": 18,
-                "History": [
+                "history": [
                     {
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",
@@ -142,7 +142,7 @@
                 "Name": "Pet Supplies Section",
                 "Current_Count": 6,
                 "MaxCap": 12,
-                "History": [
+                "history": [
                     {
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",
@@ -159,7 +159,7 @@
                 "Name": "Furniture Section",
                 "Current_Count": 8,
                 "MaxCap": 20,
-                "History": [
+                "history": [
                     {
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",
@@ -176,7 +176,7 @@
                 "Name": "Kitchenware Section",
                 "Current_Count": 11,
                 "MaxCap": 25,
-                "History": [
+                "history": [
                     {
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",
@@ -193,7 +193,7 @@
                 "Name": "Books and Magazines Section",
                 "Current_Count": 7,
                 "MaxCap": 15,
-                "History": [
+                "history": [
                     {
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",

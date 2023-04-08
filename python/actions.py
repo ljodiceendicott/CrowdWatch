@@ -35,6 +35,10 @@ def serialize(object):
 # Returns the data that is found in Json File that is for the specific business returning the business OBJ
 # @param - name - Name the json file that is being looked for in user files
 def read_from_Json(name):
+
+    # for testing
+
+    # For real imp
     file = open("../UserFiles/" + name + ".json")
     data = json.load(file)
     file.close()
@@ -101,9 +105,9 @@ def spreadsheet_Data_Add(fn, data):
         0, len(data)
     ):  # Loops through all of the data that is given from update
         print(data[i])
-        cell = sheet.cell(row=i + 1, column=column)
+        # cell = sheet.cell(row=i + 1, column=column)
         print(cell.value)
-        cell.value = data[i]
+        # cell.value = data[i]
     workbook.save("../UserFiles/" + fn + "businessAnalysis.xlsx")
 
 
@@ -199,7 +203,10 @@ def postRequest(data):
     postlog(data)
     x = requests.post(url, json=data)
 
-    print(x.text)
+    # print(x.text)
+
+# postRequest(locations[0])
+# postRequest(history)
 
 
 def postlog(data):
@@ -210,11 +217,12 @@ def postlog(data):
 
 
 ##~~~Testing Area~~~~##
-print(read_from_Json("paddyFull"))
+# print(read_from_Json("paddyFull"))
 data = read_from_Json("paddyFull")
 locations = data["account"]["locations"]
+history = locations[0]["history"]
 
-postRequest(locations[0])
+
 # locations[0]["count"] = locations[0]["count"] + 1
 # print(locations[0])
 # print(locations)

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <header>
-    <script type="text/javascript" src="../data.json.json"></script>
+    <!-- <script type="text/javascript" src="../data/dataFull.json"></script> -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -9,6 +9,8 @@
       crossorigin="anonymous" />
     <link rel="stylesheet" href="../styles/normalize.css" />
     <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/historical.css" />
+
     <h1>PeopleWatch</h1>
     <h5><i>Beat the Crowd</i></h5>
     <h7>Senior Thesis By Luke Jodice '23</h7>
@@ -22,8 +24,8 @@
     </ul>
   </nav>
   <body>
-    <h2>Historical Data</h2>
     <main>
+      <h2>Historical Data</h2>
       Location
       <select id="loc" onchange="changeval()">
         <option>SELECT LOCATION</option>
@@ -39,18 +41,14 @@
             .then((data) => {
               for (var i = start; i < data.account.locations.length; i++) {
                 var loc = data.account.locations[i];
-                const location = {
+                var hist = [];
+                var location = {
                   name: loc.name,
                   maxCap: loc.maxCap,
                   count: loc.count,
+                  history: hist,
                   idx: i,
                 };
-                locations.push(location);
-                // console.log(location.name.slice(0, location.name.length / 2));
-                var shortName = location.name.slice(
-                  0,
-                  location.name.length / 2
-                );
                 //Use a Drop down menu that will show the location names
                 //It will then populate the textarea with the location number
 

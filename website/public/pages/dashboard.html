@@ -59,9 +59,16 @@
               } else {
                 console.log("Data has changed");
                 //Call update on data
+                dash.innerHTML = "";
+                reset(0);
+                fetch("/isupdatedReset")
+                  .then((response) => response.json())
+                  .then((data) => {
+                    console.log(data);
+                  });
               }
             });
-        }, 3000);
+        }, 5000);
 
         function reset(start) {
           var values = document.getElementById("values");

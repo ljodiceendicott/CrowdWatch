@@ -6,8 +6,13 @@ const fs = require("fs");
 var data = fs.readFileSync("data.json");
 var words = JSON.parse(data);
 
+//parse all objects with first
+//Put history in its own file
+
 // console.log(words)
 var DataChange = false;
+
+// console.log(data);
 
 app.listen(3000, () => console.log("Connecting to Port: 3000"));
 app.use(express.static("public"));
@@ -29,19 +34,19 @@ database.insert({ action: "Login", date: Date.now() });
 //     console.log("Connected!");
 // })
 
-app.post("/endpoint", (request, response) => {
-  const data = request.body;
+app.post("/endpoint", (req, res) => {
+  const data = req.body;
   data.timestamp = Date.now();
   database.insert(data);
-  response.json({
+  res.json({
     status: "successful",
   });
 });
 
-app.post("/test", (request, response) => {
-  const data = request.body;
+app.post("/test", (req, res) => {
+  const data = req.body;
   console.log(data);
-  response.json({
+  res.json({
     status: "IT  Worked",
   });
 });
@@ -64,21 +69,39 @@ app.get("/isUpdated", (req, res) => {
   });
 });
 
-app.get("/logs", (request, response) => {
+app.get("/logs", (req, res) => {
   database.insert({ action: "Login", date: Date.now() });
   database.find({}, (err, data) => {
     if (err) {
-      response.end();
+      res.end();
       return;
     }
-    response.json(data);
+    res.json(data);
     console.log(data);
   });
 });
 
-app.patch("/DataChange/:location/:number?", (request, response) => {
-  words[request.params[0]] = request.params[1];
-  console.log(words);
+app.patch("/DataChange/:location/:number?", (req, res) => {
+  words[req.params[0]] = req.params[1];
+  conscole.log(words);
+});
+
+app.get("/isupdatedReset", (req, res) => {
+  DataChange = false;
+  res.json({
+    isChanged: DataChange,
+  });
+  console.log("Working");
+});
+
+app.put("/valuechange/:location/:number?", (req, res) => {
+  DataChange = true;
+  update_location = req.params[0];
+  update_number = req.params[1];
+
+  res.json({
+    isChanged: DataChange,
+  });
 });
 
 // router.get('/pages/dashboard.html', function(req, res, next) {
