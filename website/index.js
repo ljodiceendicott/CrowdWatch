@@ -63,6 +63,19 @@ app.get("/currentvalues", (req, res) => {
   res.json(words);
 });
 
+app.get("/getfullhistory", (req, res) => {
+  history = [];
+  for (var i = 0; i < words.account.locations.length; i++) {
+    var lochistory = { name: words.account.locations[i].name, lochist: [] };
+    for (var j = 0; j < words.account.locations[i].history.length; j++) {
+      lochistory.lochist.push(words.account.locations[i].history[j]);
+    }
+    history.push(lochistory);
+  }
+  res.json(history);
+  console.log(history);
+});
+
 app.get("/isUpdated", (req, res) => {
   res.json({
     isChanged: DataChange,

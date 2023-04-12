@@ -23,14 +23,28 @@
       <li><a href="historicalData.html">Historical Data</a></li>
     </ul>
   </nav>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <body>
     <main>
+      <script>
+        fullhistory = [];
+        fetch("/getfullhistory")
+          .then((response) => response.json())
+          .then((data) => {
+            fullhistory = data;
+            console.log(fullhistory);
+          });
+      </script>
       <h2>Historical Data</h2>
       Location
       <select id="loc" onchange="changeval()">
         <option>SELECT LOCATION</option>
       </select>
-      <p id="values"></p>
+      <p id="values">
+        <canvas id="myChart" style="width: 100%; max-width: 700px"></canvas>
+        <div id="myPlot" style="width:100%;max-width:700px; max-height: 800px; background-color: #333;"></div>
+      </p>
       <script>
         let locations = [];
         function reset(start) {
@@ -68,8 +82,93 @@
         function changeval() {
           var selection = document.getElementById("loc");
           console.log(selection.value);
-          console.log(locations[selection.value]);
-        }
+          console.log(fullhistory[selection.value]);
+          var idx = selection.value;
+          var xValues = [];
+          for (var i = 0; i < fullhistory[idx].lochist.length; i++) {
+            xValues.push(
+              fullhistory[idx].lochist[i].Day +
+                " " +
+                fullhistory[idx].lochist[i].Day_of_Week
+            );
+          }
+          // var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+          // var yValues = [55, 49, 44, 24, 15];
+
+          var yValues = []
+          for (var i = 0; i < fullhistory[idx].lochist.length; i++) {
+            yValues.push(fullhistory[idx].lochist[i].Highest_Cap_Amount)
+          }
+
+          var barColors = "navy";
+
+          new Chart("myChart", {
+            type: "bar",
+            data: {
+              labels: xValues,
+              datasets: [
+                {
+                  backgroundColor: barColors,
+                  data: yValues,
+                },
+              ],
+            },
+            options: {
+              legend: { display: false },
+              scales: {
+                yAxes: [
+                  {
+                    ticks: {
+                      beginAtZero: true,
+                    },
+                  },
+                ],
+              },
+            },
+          });
+
+          //start of chart 2
+          
+          //Dates+times
+          const xArray= []
+          for(var i = 0; i< fullhistory[idx].lochist.length; i++){
+            var time = fullhistory[idx].lochist[i];
+            for(var j = 0; j<fullhistory[idx].lochist[i].Highest_Cap_Times.length; j++){
+              // var capTime = fullhistory[idx].lochist[i].Highest_Cap_Times[j];
+              // capTime = capTime.split(":");
+              // var newtime = time.Day.split("/");
+              // console.log(capTime);
+              // var date = new Date(newtime[2],newtime[0],newtime[1],capTime[0],capTime[1]);
+              // console.log(date);
+              // xArray.push(date);
+              var x = fullhistory[idx].lochist[i].Day +
+                " " +
+                fullhistory[idx].lochist[i].Day_of_Week + fullhistory[idx].lochist[i].Highest_Cap_Times[j]
+              xArray.push(x);
+              }
+          }
+          // const xArray = [50,60,70,80,90,100,110,120,130,140,150];
+          //amounts
+          const yArray = [7,8,8,9,9,9,10,11,14,14,15];
+
+// Define Data
+const data = [{
+  x:xArray,
+  y:yArray,
+  mode:"markers"
+}];
+
+// Define Layout
+const layout = {
+  xaxis: {range:[xArray[0], xArray[xArray.length-1]], title: ""},
+  yaxis: {range: [0,Math.max(yArray)], title: "Number of people"},  
+  title: "people found in "+fullhistory[idx].name,
+};
+
+// Display using Plotly
+Plotly.newPlot("myPlot", data, layout);
+       
+}
 
         reset(0);
         // console.log(locations);

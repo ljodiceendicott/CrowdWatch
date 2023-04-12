@@ -11,7 +11,7 @@
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",
                         "Highest_Cap_Amount": 10,
-                        "Highest_Cap_Times": [
+                        "highest_cap_times": [
                             "12:30",
                             "13:00",
                             "14:00"
@@ -28,7 +28,7 @@
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",
                         "Highest_Cap_Amount": 20,
-                        "Highest_Cap_Times": [
+                        "highest_cap_times": [
                             "10:00",
                             "11:00",
                             "12:00"
@@ -45,7 +45,7 @@
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",
                         "Highest_Cap_Amount": 25,
-                        "Highest_Cap_Times": [
+                        "highest_cap_times": [
                             "14:30",
                             "15:00",
                             "16:00"
@@ -62,7 +62,7 @@
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",
                         "Highest_Cap_Amount": 10,
-                        "Highest_Cap_Times": [
+                        "highest_cap_times": [
                             "10:30",
                             "11:30",
                             "12:30"
@@ -79,7 +79,7 @@
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",
                         "Highest_Cap_Amount": 30,
-                        "Highest_Cap_Times": [
+                        "highest_cap_times": [
                             "16:30",
                             "17:00",
                             "18:00"
@@ -96,7 +96,7 @@
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",
                         "Highest_Cap_Amount": 10,
-                        "Highest_Cap_Times": [
+                        "highest_cap_times": [
                             "13:30",
                             "14:30",
                             "15:30"
@@ -113,7 +113,7 @@
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",
                         "Highest_Cap_Amount": 10,
-                        "Highest_Cap_Times": [
+                        "highest_cap_times": [
                             "11:30",
                             "12:00",
                             "13:00"
@@ -130,7 +130,7 @@
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",
                         "Highest_Cap_Amount": 10,
-                        "Highest_Cap_Times": [
+                        "highest_cap_times": [
                             "13:30",
                             "14:00",
                             "15:00"
@@ -147,7 +147,7 @@
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",
                         "Highest_Cap_Amount": 10,
-                        "Highest_Cap_Times": [
+                        "highest_cap_times": [
                             "11:00",
                             "12:00",
                             "13:00"
@@ -164,7 +164,7 @@
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",
                         "Highest_Cap_Amount": 10,
-                        "Highest_Cap_Times": [
+                        "highest_cap_times": [
                             "12:30",
                             "13:00",
                             "14:00"
@@ -181,7 +181,7 @@
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",
                         "Highest_Cap_Amount": 10,
-                        "Highest_Cap_Times": [
+                        "highest_cap_times": [
                             "14:00",
                             "15:00",
                             "16:00"
@@ -198,7 +198,7 @@
                         "Date": "1/2/23",
                         "Day_of_Week": "Mon",
                         "Highest_Cap_Amount": 10,
-                        "Highest_Cap_Times": [
+                        "highest_cap_times": [
                             "11:30",
                             "12:00",
                             "13:00"

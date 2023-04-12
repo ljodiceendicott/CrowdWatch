@@ -10,10 +10,45 @@
                     {
                         "Day": "3/25/2023",
                         "Day_of_Week": "Mon",
-                        "Highest_Cap_Amount": 4,
+                        "Highest_Cap_Amount": 24,
                         "Highest_Cap_Times": [
+                            "9:30",
                             "12:30",
-                            "13:00"
+                            "13:00",
+                            "15:00"
+                        ]
+                    },
+                    {
+                        "Day": "3/26/2023",
+                        "Day_of_Week": "Tue",
+                        "Highest_Cap_Amount": 8,
+                        "Highest_Cap_Times": [
+                            "10:00",
+                            "11:00",
+                            "14:00",
+                            "15:00"
+                        ]
+                    },
+                    {
+                        "Day": "3/27/2023",
+                        "Day_of_Week": "Wed",
+                        "Highest_Cap_Amount": 3,
+                        "Highest_Cap_Times": [
+                            "09:00",
+                            "10:00"
+                        ]
+                    },
+                    {
+                        "Day": "3/28/2023",
+                        "Day_of_Week": "Thu",
+                        "Highest_Cap_Amount": 12,
+                        "Highest_Cap_Times": [
+                            "12:00",
+                            "13:00",
+                            "14:00",
+                            "15:00",
+                            "16:00",
+                            "17:00"
                         ]
                     }
                 ]
@@ -26,10 +61,11 @@
                     {
                         "Day": "3/25/2023",
                         "Day_of_Week": "Mon",
-                        "Highest_Cap_Amount": 4,
+                        "Highest_Cap_Amount": 20,
                         "Highest_Cap_Times": [
-                            "12:30",
-                            "13:00"
+                            "9:30",
+                            "10:30",
+                            "11:00"
                         ]
                     }
                 ]
@@ -47,6 +83,33 @@
                             "12:30",
                             "13:00"
                         ]
+                    },
+                    {
+                        "Day": "3/26/2023",
+                        "Day_of_Week": "Tue",
+                        "Highest_Cap_Amount": 8,
+                        "Highest_Cap_Times": [
+                            "10:00",
+                            "11:00",
+                            "12:00"
+                        ]
+                    },
+                    {
+                        "Day": "3/27/2023",
+                        "Day_of_Week": "Wed",
+                        "Highest_Cap_Amount": 5,
+                        "Highest_Cap_Times": [
+                            "14:30",
+                            "15:00"
+                        ]
+                    },
+                    {
+                        "Day": "3/28/2023",
+                        "Day_of_Week": "Thu",
+                        "Highest_Cap_Amount": 3,
+                        "Highest_Cap_Times": [
+                            "16:00"
+                        ]
                     }
                 ]
             },
@@ -58,10 +121,12 @@
                     {
                         "Day": "3/25/2023",
                         "Day_of_Week": "Mon",
-                        "Highest_Cap_Amount": 4,
+                        "Highest_Cap_Amount": 29,
                         "Highest_Cap_Times": [
-                            "12:30",
-                            "13:00"
+                            "7:30",
+                            "9:45",
+                            "11:48",
+                            "17:00"
                         ]
                     }
                 ]
