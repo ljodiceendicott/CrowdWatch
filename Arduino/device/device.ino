@@ -4,7 +4,8 @@ const int buttonCycleRightPin = 10;
 const int buttonIncrease = 9;
 const int buttonDecrease = 13;
 
-int myArray[10]={9, 3, 2, 4, 3, 2, 7, 8, 9, 11};
+String locs[10] = {"loc1", "loc2","loc4", "loc5","loc6", "loc7","loc8", "loc9", "loc10"};
+int count[10]={9, 3, 2, 4, 3, 2, 7, 8, 9, 11};
 
 LiquidCrystal lcd(12,11,5,4,3,2);
 
@@ -33,9 +34,11 @@ void loop(){
   //   lcd.print(myArray[locnum]);
   //   write = true;
   // }
-  lcd.print("Test Location");
+  lcd.print("   "+locs[locnum]);
   lcd.setCursor(0, 1);
-  lcd.print("Count: alot     ");
+  lcd.println("Count:     ");
+  lcd.print(count[locnum]);
+  
   // delay(500);
   // lcd.clear();
   // delay(500);
@@ -56,10 +59,12 @@ increaseButtonState = digitalRead(buttonIncrease);
 decreaseButtonState = digitalRead(buttonDecrease);
   if(increaseButtonState == HIGH){
     Serial.println('+');
+    count[locnum] = count[locnum]+1;
     delay(500);//Delay to stop double inputs unless they are intentional
   }
   if(decreaseButtonState == HIGH){
     Serial.println('-');
+    count[locnum] = count[locnum]-1;
     delay(1000);
   }
 

@@ -219,9 +219,7 @@ def postlog(data):
 
 ##~~~Testing Area~~~~##
 # print(read_from_Json("paddyFull"))
-data = read_from_Json("paddyFull")
-locations = data["account"]["locations"][0]["history"][0]["highest_cap_times"]
-postRequest(locations)
+
 
 # locations[0]["count"] = locations[0]["count"] + 1
 # print(locations[0])
