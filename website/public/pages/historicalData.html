@@ -134,13 +134,6 @@
           for(var i = 0; i< fullhistory[idx].lochist.length; i++){
             var time = fullhistory[idx].lochist[i];
             for(var j = 0; j<fullhistory[idx].lochist[i].Highest_Cap_Times.length; j++){
-              // var capTime = fullhistory[idx].lochist[i].Highest_Cap_Times[j];
-              // capTime = capTime.split(":");
-              // var newtime = time.Day.split("/");
-              // console.log(capTime);
-              // var date = new Date(newtime[2],newtime[0],newtime[1],capTime[0],capTime[1]);
-              // console.log(date);
-              // xArray.push(date);
               var x = fullhistory[idx].lochist[i].Day +
                 " " +
                 fullhistory[idx].lochist[i].Day_of_Week + fullhistory[idx].lochist[i].Highest_Cap_Times[j]
@@ -155,7 +148,8 @@
 const data = [{
   x:xArray,
   y:yArray,
-  mode:"markers"
+  mode:"lines",
+  type : "scatter"
 }];
 
 // Define Layout

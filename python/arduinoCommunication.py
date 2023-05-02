@@ -15,15 +15,17 @@ def start_of_day():
 
 def middle_of_day():
     print("Half of day")
+    actions.spreadsheet_Data_Add("paddyFull", locations)
 
 
 def eod():
     print("End of the day")
+    actions.spreadsheet_Data_Add("paddyFull", locations)
 
 
-schedule.every.day.at("8:00").do(start_of_day)
-schedule.every.day.at("12:00").do(middle_of_day)
-schedule.every.day.at("22:00").do(eod)
+# schedule.every.day.at("8:00").do(start_of_day)
+# schedule.every.day.at("12:00").do(middle_of_day)
+# schedule.every.day.at("22:00").do(eod)
 
 
 def scheduler():
@@ -32,19 +34,9 @@ def scheduler():
 
 
 def setup():
-    # ports = list(serial.tools.list_ports.comports())
-
-    # portUsed = ""
-    # for port in ports:
-    #     if port.description.startswith("Arduino"):
-    #         portUsed = port
-
-    # if portUsed == "":
-    #     raise ValueError("No Arduino port found\n Exiting code")
-
     arduino = serial.Serial(port="COM8", baudrate=19200, timeout=0.1)
     # arduino = serial.Serial(port=portUsed, baudrate=19200, timeout=0.1)
-    arduino.write(str.encode("start\n"))
+    # arduino.write(str.encode("start\n"))
 
     # olddata = ''
     file = actions.read_from_Json("paddy")
@@ -66,46 +58,47 @@ def loop(arduino, locations, curloc):
         if action.decode() == "+":
             print("add one")
             print(locations[curloc]["name"])
-            print(locations[curloc]["count"])
             # adding to the count by one
 
             if locations[curloc]["maxCap"] == locations[curloc]["count"]:
                 print("At Max Capacity")
             else:
                 locations[curloc]["count"] = locations[curloc]["count"] + 1
-
+            print(locations[curloc]["count"])
             # Update Data
             # data = actions.read_from_Json("paddyFull")
             # actions.postRequest(data)
         elif action.decode() == "-":
             print("sub one")
             print(locations[curloc]["name"])
-            print(locations[curloc]["count"])
+
             # subbing to the count by one
 
             if locations[curloc]["count"] == 0:
                 print("No One is there")
             else:
                 locations[curloc]["count"] = locations[curloc]["count"] - 1
-
+            print(locations[curloc]["count"])
             # Update Data
             # data = actions.read_from_Json("paddyFull")
             # actions.postRequest(data)
-        elif action.decode() == ">":
-            print("shift right")
-            print(locations[curloc]["name"])
-            print(locations[curloc]["count"])
-            # shifting the location by one
-            curloc = (curloc + 1) % len(locations)
-
-            # arduino.write(str.encode(locations[curloc]) + "\n")
         elif action.decode() == "<":
             print("shift left")
             # print(locations[curloc]["name"])
             # print(locations[curloc]["count"])
+            # shifting the location by one
+            curloc = (curloc + 1) % len(locations)
+            print(locations[curloc]["name"])
+            print(locations[curloc]["count"])
+            # arduino.write(str.encode(locations[curloc]) + "\n")
+        elif action.decode() == ">":
+            print("shift right")
+
             # shifting the location by one in opposite way
 
             curloc = (curloc - 1) % len(locations)
+            print(locations[curloc]["name"])
+            print(locations[curloc]["count"])
 
             # arduino.write(str.encode(locations[curloc]) + "\n")
 
